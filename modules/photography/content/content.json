@@ -1,0 +1,180 @@
+{
+  "presentation": {
+    "slides": [
+      {
+        "elements": [
+          {
+            "x": 20,
+            "y": 20,
+            "width": 100,
+            "height": 15,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h1>Module 2: Clinical Photography Best Practices</h1><h2>Capturing High-Quality Diagnostic Images</h2>"
+              }
+            }
+          },
+          {
+            "x": 10,
+            "y": 40,
+            "width": 80,
+            "height": 50,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h3>Image Quality Requirements</h3><p>High-quality images are essential for AI training. Your photos should:</p><ul><li><strong>Be in focus</strong> - Sharp detail of lesions</li><li><strong>Have good lighting</strong> - Natural or clinical light, avoid shadows</li><li><strong>Show clinical context</strong> - Include surrounding skin for comparison</li><li><strong>Be properly oriented</strong> - Correct anatomical positioning</li><li><strong>Have minimal artifacts</strong> - No jewelry, clothing, or debris in frame</li></ul><p><strong>Important:</strong> All images will be de-identified before use in AI training.</p>"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "elements": [
+          {
+            "x": 20,
+            "y": 10,
+            "width": 100,
+            "height": 10,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h2>Required Metadata Fields</h2>"
+              }
+            }
+          },
+          {
+            "x": 10,
+            "y": 25,
+            "width": 80,
+            "height": 55,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h3>Each submission must include:</h3><table border='1' cellpadding='5'><tr><td><strong>Field</strong></td><td><strong>Purpose</strong></td></tr><tr><td>Partner Organization</td><td>Accountability and tracking</td></tr><tr><td>Submitting Clinician</td><td>Attribution and verification</td></tr><tr><td>Country</td><td>Geographic diversity for AI</td></tr><tr><td>Clinical Form (Ridley-Jopling)</td><td>Classification for training</td></tr><tr><td>Operational Classification</td><td>Treatment category</td></tr><tr><td>Reaction Status</td><td>Presence of reactions</td></tr><tr><td>Gender</td><td>Demographic balance</td></tr><tr><td>Age Group</td><td>Demographic balance</td></tr><tr><td>Phototype (Fitzpatrick)</td><td>Skin tone diversity</td></tr><tr><td>Anatomical Location</td><td>Body part shown in image</td></tr><tr><td>Image Capture Method</td><td>Camera type/quality info</td></tr></table>"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "elements": [
+          {
+            "x": 20,
+            "y": 10,
+            "width": 100,
+            "height": 10,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h2>Photography Best Practices</h2>"
+              }
+            }
+          },
+          {
+            "x": 10,
+            "y": 25,
+            "width": 35,
+            "height": 50,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h3>DO:</h3><ul><li>Clean camera lens before use</li><li>Use macro mode for close-ups</li><li>Include ruler/coin for scale</li><li>Take multiple angles</li><li>Ensure even lighting</li><li>Photograph on neutral background</li><li>Check focus before submission</li></ul>"
+              }
+            }
+          },
+          {
+            "x": 50,
+            "y": 25,
+            "width": 35,
+            "height": 50,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h3>DON'T:</h3><ul><li>Use flash that creates glare</li><li>Include faces in photos</li><li>Capture identifying tattoos</li><li>Submit blurry images</li><li>Show jewelry or clothing</li><li>Photograph through bandages</li><li>Submit without checking</li></ul>"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "elements": [
+          {
+            "x": 20,
+            "y": 10,
+            "width": 100,
+            "height": 10,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h2>Special Considerations</h2>"
+              }
+            }
+          },
+          {
+            "x": 10,
+            "y": 25,
+            "width": 80,
+            "height": 55,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h3>Private Body Areas:</h3><p>When photographing lesions on breasts, genitals, buttocks, or inner thighs:</p><ul><li>Obtain <strong>explicit specific consent</strong> for that body region</li><li>Use professional draping to expose only necessary area</li><li>Ensure complete privacy (closed door, minimal personnel)</li><li>Consider gender concordance when feasible</li><li>Offer chaperone of patient's choice</li><li>Work efficiently while maintaining dignity</li></ul><p><strong>Remember:</strong> Technical quality is important, but patient dignity is paramount.</p>"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "elements": [
+          {
+            "x": 10,
+            "y": 10,
+            "width": 80,
+            "height": 20,
+            "action": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<h2>Knowledge Check</h2><p>Which metadata field is used to ensure skin tone diversity in the AI training dataset?</p>"
+              }
+            }
+          },
+          {
+            "x": 10,
+            "y": 35,
+            "width": 80,
+            "height": 45,
+            "action": {
+              "library": "H5P.MultiChoice 1.16",
+              "params": {
+                "question": "Which metadata field is used to ensure skin tone diversity in the AI training dataset?",
+                "answers": [
+                  {
+                    "text": "Age Group",
+                    "correct": false,
+                    "tip": "Incorrect. Age Group tracks demographic age distribution, not skin tone."
+                  },
+                  {
+                    "text": "Clinical Form (Ridley-Jopling)",
+                    "correct": false,
+                    "tip": "Incorrect. This classifies the type/severity of leprosy."
+                  },
+                  {
+                    "text": "Phototype (Fitzpatrick Scale)",
+                    "correct": true,
+                    "tip": "Correct! The Fitzpatrick Scale (I-VI) documents skin tone to ensure AI works across diverse populations."
+                  },
+                  {
+                    "text": "Operational Classification",
+                    "correct": false,
+                    "tip": "Incorrect. This categorizes paucibacillary vs multibacillary for treatment."
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
