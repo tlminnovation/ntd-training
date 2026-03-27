@@ -1,0 +1,136 @@
+{
+  "library": "H5P.BranchingScenario 1.8",
+  "jsonContent": {
+    "title": "Module 3: Informed Consent Procedures",
+    "description": "Navigate real-world consent scenarios",
+    "content": {
+      "startScreen": {
+        "title": "Module 3: Informed Consent Procedures",
+        "subtitle": "Test your understanding of consent through realistic scenarios",
+        "text": "<p>In this module, you will face realistic scenarios that test your understanding of informed consent. Make choices and see the consequences. There are no trick questions - focus on patient dignity and voluntary participation.</p><p><strong>Key Principles:</strong></p><ul><li>Consent must be informed, voluntary, and ongoing</li><li>Patients can withdraw consent at any time</li><li>Language barriers require interpreters</li><li>Vulnerable populations need extra protection</li></ul>",
+        "buttonText": "Start Scenario"
+      },
+      "endScreen": {
+        "title": "Module 3 Complete",
+        "text": "<p>You have completed the consent scenarios. Remember:</p><ul><li>Consent is an ongoing process, not a one-time checkbox</li><li>When in doubt, stop and reassess</li><li>Patient autonomy always takes priority</li><li>Document any concerns or withdrawal of consent</li></ul><p>Click Continue to proceed to Module 4.</p>",
+        "buttonText": "Continue"
+      },
+      "scenarios": [
+        {
+          "id": "scenario1",
+          "title": "Scenario 1: The Interpreter Challenge",
+          "text": "<p>You are preparing to photograph lesions on a patient's arm. The patient speaks a different language than you, and no interpreter is immediately available. A family member offers to translate. What do you do?</p>",
+          "options": [
+            {
+              "text": "Accept the family member's translation - they know the patient best",
+              "next": "wrong1",
+              "feedback": "This poses risks. Family members may filter information, add their own opinions, or the patient may not feel free to refuse with family present."
+            },
+            {
+              "text": "Wait for a professional interpreter or use a phone translation service",
+              "next": "correct1",
+              "feedback": "Excellent! Professional interpretation ensures accuracy and maintains patient autonomy. Phone services are acceptable alternatives."
+            },
+            {
+              "text": "Proceed with simple gestures and assume consent if patient nods",
+              "next": "wrong1",
+              "feedback": "This is inadequate. Consent requires understanding complex information about the project. Never assume consent."
+            }
+          ]
+        },
+        {
+          "id": "correct1",
+          "title": "Correct Approach",
+          "text": "<p>You wait for professional interpretation. The patient understands the project fully and asks thoughtful questions about data security. After discussion, they provide informed consent.</p><p><strong>Key Learning:</strong> Language barriers must be properly addressed. Family translation is NOT sufficient for medical consent.</p>",
+          "next": "scenario2"
+        },
+        {
+          "id": "wrong1",
+          "title": "Reconsider",
+          "text": "<p>This approach has significant problems. Family members may not translate accurately, may pressure the patient, or the patient may not feel free to refuse.</p><p><strong>Best Practice:</strong> Always use professional interpretation for informed consent. This protects both you and the patient.</p>",
+          "next": "scenario2"
+        },
+        {
+          "id": "scenario2",
+          "title": "Scenario 2: The Hesitant Patient",
+          "text": "<p>During photography of a lesion on the back, you notice the patient seems uncomfortable. They keep adjusting their position and avoiding eye contact. When you ask if everything is okay, they say "fine" but their body language suggests otherwise. What do you do?</p>",
+          "options": [
+            {
+              "text": "Continue quickly to finish the procedure",
+              "next": "wrong2",
+              "feedback": "This ignores important non-verbal cues. Discomfort may indicate lack of true consent."
+            },
+            {
+              "text": "Stop immediately and ask open-ended questions about their concerns",
+              "next": "correct2",
+              "feedback": "Perfect! Body language and non-verbal cues are important indicators. Stopping to reassess is always the right choice."
+            },
+            {
+              "text": "Ask them to sign the consent form again",
+              "next": "wrong2b",
+              "feedback": "Re-signing doesn't address the underlying discomfort. You need to understand WHY they seem uncomfortable."
+            }
+          ]
+        },
+        {
+          "id": "correct2",
+          "title": "Correct Approach",
+          "text": "<p>You stop and ask: "I notice you seem uncomfortable. Is there something about the photography that concerns you?" The patient admits they're worried about images being shared with employers. You explain the de-identification process and strict confidentiality measures. They relax and continue with full understanding.</p><p><strong>Key Learning:</strong> Consent is ongoing. Non-verbal cues matter. Always create space for patients to express concerns.</p>",
+          "next": "scenario3"
+        },
+        {
+          "id": "wrong2",
+          "title": "Reconsider",
+          "text": "<p>Pressuring through the procedure ignores important ethical signals. The patient may be experiencing coercion, anxiety, or misunderstanding.</p><p><strong>Remember:</strong> True consent requires comfort and understanding. Always stop and reassess when you sense discomfort.</p>",
+          "next": "scenario3"
+        },
+        {
+          "id": "wrong2b",
+          "title": "Reconsider",
+          "text": "<p>Simply having them sign again doesn't address the root issue. The consent form is evidence of a process, not the process itself.</p><p><strong>Better approach:</strong> Explore WHY they seem uncomfortable. Address concerns before proceeding.</p>",
+          "next": "scenario3"
+        },
+        {
+          "id": "scenario3",
+          "title": "Scenario 3: The Withdrawal of Consent",
+          "text": "<p>You have obtained consent and photographed one lesion. As you prepare to photograph a second lesion, the patient says: "Actually, I don't want to do the second one." What do you do?</p>",
+          "options": [
+            {
+              "text": "Explain that we need both images for the study and encourage them to continue",
+              "next": "wrong3",
+              "feedback": "This is coercive. Patients can withdraw consent at ANY time, even mid-procedure."
+            },
+            {
+              "text": "Thank them for what they've provided and stop immediately",
+              "next": "correct3",
+              "feedback": "Correct! Consent is ongoing and can be withdrawn at any moment. Respect their decision completely."
+            },
+            {
+              "text": "Ask them to reconsider and offer to take a break first",
+              "next": "wrong3b",
+              "feedback": "While offering a break is thoughtful, the patient has clearly withdrawn consent for the second photo. Respect their decision without pressure."
+            }
+          ]
+        },
+        {
+          "id": "correct3",
+          "title": "Correct Approach",
+          "text": "<p>You immediately stop and say: "Of course, thank you for allowing us to photograph the first lesion. That will be helpful. We respect your decision completely." You document that consent was withdrawn for the second lesion.</p><p><strong>Key Learning:</strong> Consent is not a contract. Patients can change their minds at any time. Respect their autonomy completely.</p>",
+          "next": "end"
+        },
+        {
+          "id": "wrong3",
+          "title": "Reconsider",
+          "text": "<p>Pressuring a patient to continue after they've withdrawn consent is a serious ethical violation. This negates the voluntary nature of consent.</p><p><strong>Critical Principle:</strong> Withdrawal of consent must be respected immediately and completely. No explanations needed.</p>",
+          "next": "end"
+        },
+        {
+          "id": "wrong3b",
+          "title": "Reconsider",
+          "text": "<p>While the break offer is well-intentioned, the patient has clearly stated they don't want to continue. Any pressure, however gentle, undermines their autonomy.</p><p><strong>Best Practice:</strong> Accept their withdrawal gracefully and thank them for their participation.</p>",
+          "next": "end"
+        }
+      ]
+    }
+  }
+}

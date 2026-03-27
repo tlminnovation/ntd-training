@@ -1,0 +1,183 @@
+{
+  "library": "H5P.CoursePresentation 1.25",
+  "jsonContent": {
+    "presentation": {
+      "slides": [
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 100,
+              "height": 15,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h1>Module 1: Project Overview & Objectives</h1><h2>WHO SkinNTD AI Image Collection Initiative</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 40,
+              "width": 80,
+              "height": 50,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Welcome to the SkinApp Training Course</h3><p>This course will prepare you to:</p><ul><li>Collect high-quality clinical images of leprosy and skin NTDs</li><li>Follow proper consent procedures</li><li>Maintain patient dignity and safeguarding</li><li>Use the electronic data collection system</li></ul><p><strong>Project Goal:</strong> Build a diverse dataset of clinical images to train AI systems for improved leprosy and skin NTD diagnosis in resource-limited settings.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Why This Project Matters</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 30,
+              "width": 40,
+              "height": 40,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>The Challenge</h3><ul><li>Leprosy remains underdiagnosed in many regions</li><li>Specialist dermatologists are scarce</li><li>Early detection prevents disability</li><li>AI can assist primary health workers</li></ul>"
+                }
+              }
+            },
+            {
+              "x": 50,
+              "y": 30,
+              "width": 40,
+              "height": 40,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>The Solution</h3><ul><li>AI-powered diagnostic tools</li><li>Trained on diverse clinical images</li><li>Supports healthcare workers</li><li>Improves access to care</li></ul><p><em>Your contribution makes this possible!</em></p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Your Role as a Contributing Clinician</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 30,
+              "width": 80,
+              "height": 50,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Key Responsibilities:</h3><ol><li><strong>Obtain informed consent</strong> - Ensure patients understand and voluntarily agree</li><li><strong>Capture quality images</strong> - Follow photography guidelines for diagnostic value</li><li><strong>Maintain confidentiality</strong> - Remove identifying information</li><li><strong>Submit through secure platform</strong> - Use authorized data collection tools</li><li><strong>Uphold safeguarding</strong> - Protect vulnerable patients</li></ol><p><strong>Remember:</strong> Patient welfare always comes first. Never compromise dignity for image quality.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Governance Structure</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Responsibility Chain:</h3><p><strong>Level 1:</strong> WHO - TLM International Agreement<br>↳ License and oversight</p><p><strong>Level 2:</strong> TLM International - Partner Organization<br>↳ Formal partnership agreements</p><p><strong>Level 3:</strong> Partner Organization - Clinician<br>↳ Training and authorization</p><p><strong>Level 4:</strong> Clinician - Patient<br>↳ Consent and care relationship</p><p><em>You are part of Level 3-4, with direct responsibility to patients.</em></p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 10,
+              "y": 20,
+              "width": 80,
+              "height": 20,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Knowledge Check</h2><p>What is the PRIMARY goal of this project?</p>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 45,
+              "width": 80,
+              "height": 35,
+              "action": {
+                "library": "H5P.MultiChoice 1.16",
+                "params": {
+                  "question": "What is the PRIMARY goal of the WHO SkinNTD AI Image Collection Initiative?",
+                  "answers": [
+                    {
+                      "text": "To create a commercial database of skin disease images",
+                      "correct": false,
+                      "tip": "Incorrect. This is a non-commercial public health initiative."
+                    },
+                    {
+                      "text": "To train AI systems for improved leprosy and skin NTD diagnosis",
+                      "correct": true,
+                      "tip": "Correct! The goal is to build AI diagnostic tools to help healthcare workers in resource-limited settings."
+                    },
+                    {
+                      "text": "To replace dermatologists with AI",
+                      "correct": false,
+                      "tip": "Incorrect. AI supports, not replaces, healthcare professionals."
+                    },
+                    {
+                      "text": "To collect data for pharmaceutical research",
+                      "correct": false,
+                      "tip": "Incorrect. The focus is on diagnostic support, not drug development."
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

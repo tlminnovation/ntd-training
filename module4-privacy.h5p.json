@@ -1,0 +1,183 @@
+{
+  "library": "H5P.CoursePresentation 1.25",
+  "jsonContent": {
+    "presentation": {
+      "slides": [
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 100,
+              "height": 15,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h1>Module 4: Anonymization & Privacy Protection</h1><h2>Protecting Patient Identity</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 40,
+              "width": 80,
+              "height": 50,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Why Anonymization Matters</h3><p>Even though you have patient consent, protecting identity is crucial:</p><ul><li><strong>Prevents harm</strong> - Stigma can affect employment, relationships</li><li><strong>Legal requirement</strong> - Many jurisdictions mandate de-identification</li><li><strong>Ethical obligation</strong> - Minimizes data even with consent</li><li><strong>Trust preservation</strong> - Patients must trust the system</li></ul><p><strong>Rule:</strong> No identifying information should be visible in any submitted image.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>What Must Be Removed or Hidden</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 35,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>ALWAYS Remove:</h3><ul><li>Faces and facial features</li><li>Names on wristbands</li><li>Tattoos (unless the tattoo IS the lesion)</li><li>Jewelry with initials</li><li>Clothing with logos/text</li><li>Background items that identify location</li><li>Unique birthmarks</li><li>Scars that could identify patient</li></ul>"
+                }
+              }
+            },
+            {
+              "x": 50,
+              "y": 25,
+              "width": 35,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Techniques:</h3><ul><li><strong>Cropping:</strong> Frame tightly around lesion</li><li><strong>Black bars:</strong> Cover identifying areas</li><li><strong>Blurring:</strong> Use photo editing tools</li><li><strong>Neutral backgrounds:</strong> Plain sheets or drapes</li><li><strong>Check twice:</strong> Review before submission</li><li><strong>When in doubt:</strong> Don't submit - retake</li></ul>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Before and After Examples</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Common Mistakes:</h3><p><strong>Problem 1:</strong> Photo shows patient's hand with wedding ring visible<br>→ <strong>Solution:</strong> Remove jewelry or crop to show only lesion area</p><p><strong>Problem 2:</strong> Hospital ID band visible in corner of frame<br>→ <strong>Solution:</strong> Remove wristband before photography or crop out</p><p><strong>Problem 3:</strong> Unique constellation of moles visible near lesion<br>→ <strong>Solution:</strong> These could identify patient; crop or blur the area</p><p><strong>Problem 4:</strong> Window in background shows recognizable landmark<br>→ <strong>Solution:</strong> Use neutral backdrop, close curtains, or change position</p><p><em>Remember: If you can identify the patient from the photo, someone else might too.</em></p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Technical Safeguards</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Data Collection System Protections:</h3><ul><li><strong>Secure transmission:</strong> Encrypted upload to authorized servers</li><li><strong>Access controls:</strong> Only authorized personnel can view raw images</li><li><strong>Audit trails:</strong> Who accessed what and when</li><li><strong>De-identification:</strong> Automatic removal of metadata that could identify</li><li><strong>Storage security:</strong> Secure, backed-up, access-controlled storage</li></ul><h3>Your Responsibilities:</h3><ul><li>Ensure photos on your device are deleted after secure upload</li><li>Don't store images on personal devices long-term</li><li>Don't share images via email or messaging apps</li><li>Report any data breaches immediately</li><li>Follow your institution's data protection policies</li></ul>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 10,
+              "y": 10,
+              "width": 80,
+              "height": 20,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Knowledge Check</h2><p>Which of the following does NOT need to be removed from a clinical photo?</p>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 35,
+              "width": 80,
+              "height": 45,
+              "action": {
+                "library": "H5P.MultiChoice 1.16",
+                "params": {
+                  "question": "Which of the following does NOT need to be removed from a clinical photo before submission?",
+                  "answers": [
+                    {
+                      "text": "Patient's wristband with name and ID",
+                      "correct": false,
+                      "tip": "Incorrect. Wristbands contain identifying information and must be removed or covered."
+                    },
+                    {
+                      "text": "A mole that is part of the lesion being documented",
+                      "correct": true,
+                      "tip": "Correct! Clinical features that are part of the condition being documented should remain visible."
+                    },
+                    {
+                      "text": "Tattoo on patient's arm near the lesion",
+                      "correct": false,
+                      "tip": "Incorrect. Tattoos can be identifying and should be covered unless the tattoo itself is the clinical finding."
+                    },
+                    {
+                      "text": "Window showing recognizable hospital exterior",
+                      "correct": false,
+                      "tip": "Incorrect. Background elements that identify location should be avoided or removed."
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

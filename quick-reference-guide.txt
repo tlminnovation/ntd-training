@@ -1,0 +1,161 @@
+SKINAPP TRAINING COURSE - QUICK REFERENCE GUIDE
+==============================================
+
+COURSE AT A GLANCE
+------------------
+Total Duration: 45-60 minutes
+Modules: 5 + Final Assessment
+Pass Rate: 80%
+Format: Interactive H5P content
+Target: Medical staff collecting clinical images
+
+MODULE BREAKDOWN
+----------------
+
+MODULE 1: PROJECT OVERVIEW (10 min)
+Learning Objectives:
+- Understand the AI training project goals
+- Know your role and responsibilities
+- Recognize the governance structure
+
+Key Points:
+- Project goal: Train AI for leprosy/skin NTD diagnosis
+- 4-level governance: WHO → TLM → Partners → Clinicians
+- Your responsibility: Patient welfare comes first
+
+MODULE 2: CLINICAL PHOTOGRAPHY (12 min)
+Learning Objectives:
+- Capture high-quality diagnostic images
+- Complete required metadata fields
+- Handle sensitive body areas appropriately
+
+Key Points:
+- Use macro mode, good lighting, proper focus
+- 10 required metadata fields (including Fitzpatrick scale)
+- Special care for private areas: specific consent, draping, privacy
+
+MODULE 3: INFORMED CONSENT (15 min)
+Learning Objectives:
+- Navigate real-world consent challenges
+- Recognize when consent is not voluntary
+- Respond appropriately to consent withdrawal
+
+Key Points:
+- Consent is ongoing, not one-time
+- Use professional interpreters
+- Withdrawal must be respected immediately
+- Watch for red flags: confusion, fear, looking to others
+
+MODULE 4: PRIVACY & ANONYMIZATION (10 min)
+Learning Objectives:
+- Remove identifying information from images
+- Understand what must be hidden
+- Follow data protection protocols
+
+Key Points:
+- Remove: faces, names, tattoos, jewelry, backgrounds
+- Keep: clinical lesions, context, scale indicators
+- Check twice before submitting
+- Use secure upload, delete from device after
+
+MODULE 5: SAFEGUARDING (10 min)
+Learning Objectives:
+- Protect dignity during photography
+- Identify vulnerable populations
+- Respond to safeguarding concerns
+- Know when to report
+
+Key Points:
+- 5 principles: Respect, Continuous Consent, Vulnerable Protection, Dignity, Mandatory Reporting
+- Children need guardian consent + assent
+- Stop if any safeguarding concerns arise
+- Report suspected abuse per institutional protocols
+
+FINAL ASSESSMENT (5-10 min)
+- 10 questions
+- 80% pass rate
+- Covers all modules
+- Retakes allowed
+
+DEPLOYMENT CHECKLIST
+--------------------
+□ Choose platform (Moodle/H5P.com/WordPress/Drupal)
+□ Import all 7 H5P files
+□ Test functionality
+□ Customize with your branding
+□ Set completion tracking
+□ Configure certificate (optional)
+□ Test on mobile devices
+□ Pilot with small group
+□ Launch to all staff
+
+INTEGRATION WITH KOBO/REDCAP
+------------------------------
+Recommended workflow:
+1. Staff completes H5P training
+2. Passes assessment (80%)
+3. Receives certificate/completion code
+4. Enters code in KoboToolbox/REDCap
+5. Gains access to image collection forms
+6. Metadata tracks training completion
+
+TROUBLESHOOTING
+---------------
+Q: Content not loading?
+A: Check browser compatibility, clear cache
+
+Q: Can't upload H5P files?
+A: Ensure platform has H5P plugin installed
+
+Q: Need to translate content?
+A: H5P supports multi-language; export, translate, re-import
+
+Q: Want to add videos?
+A: H5P supports video embedding; ensure patient consent for any video content
+
+Q: Tracking not working?
+A: Enable completion tracking in LMS settings
+
+KEY TERMS QUICK REFERENCE
+-------------------------
+Fitzpatrick Scale: I-VI scale for skin tone
+Ridley-Jopling: Leprosy classification system
+Assent: Agreement from child (vs legal consent from guardian)
+De-identification: Removing identifying information
+Paucibacillary/Multibacillary: Leprosy operational classifications
+Safeguarding: Protecting from harm, abuse, neglect
+
+CONTACT & SUPPORT
+-----------------
+Training Content: Based on WHO SkinNTD Technical Specs v1.3
+Technical Platform: h5p.org/support
+Implementation: Your IT department
+
+REMEMBER
+--------
+- Patient welfare ALWAYS comes first
+- When in doubt, STOP and consult
+- Consent is ongoing, not one-time
+- Anonymization is mandatory
+- Report safeguarding concerns immediately
+- Quality images help AI help patients
+
+COURSE COMPLETION CERTIFICATE
+-----------------------------
+Upon passing (80%), staff should receive:
+- Completion confirmation
+- Certificate or badge
+- Authorization to collect images
+- Access to data collection system
+- Contact info for questions
+
+FURTHER READING
+---------------
+- Technical Specification Document
+- WHO SkinNTD Guidelines
+- Partner Organization Agreements
+- Institutional Safeguarding Policies
+- Data Protection Regulations
+
+---
+Version 1.0 | March 2026 | WHO SkinNTD Initiative

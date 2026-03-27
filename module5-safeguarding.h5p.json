@@ -1,0 +1,199 @@
+{
+  "library": "H5P.CoursePresentation 1.25",
+  "jsonContent": {
+    "presentation": {
+      "slides": [
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 20,
+              "width": 100,
+              "height": 15,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h1>Module 5: Safeguarding Principles</h1><h2>Protecting Vulnerable Patients</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 40,
+              "width": 80,
+              "height": 50,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>What is Safeguarding?</h3><p>Safeguarding means protecting people's health, wellbeing, and human rights, enabling them to live free from harm, abuse, and neglect.</p><p><strong>In this project:</strong></p><ul><li><strong>Dignity:</strong> Always maintain patient dignity during photography</li><li><strong>Autonomy:</strong> Respect patient choices and consent</li><li><strong>Protection:</strong> Identify and respond to vulnerability</li><li><strong>Professionalism:</strong> Maintain appropriate boundaries</li></ul><p><strong>Golden Rule:</strong> When in doubt about any safeguarding issue → STOP and consult.</p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>The Five Principles of Dignity</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Principle 1: Respect for Persons</h3><ul><li>Every patient has inherent worth and dignity</li><li>Treat all patients with respect regardless of background</li><li>Watch for non-verbal cues of discomfort</li><li>Allow breaks if needed</li><li>Have same-gender chaperone when appropriate</li></ul><h3>Principle 2: Informed Consent is Continuous</h3><ul><li>Consent is not a one-time checkbox</li><li>Patient can withdraw at any moment</li><li>Continuously assess comfort and willingness</li><li>Re-explain if you sense hesitation</li></ul><h3>Principle 3: Special Protection for Vulnerable</h3><ul><li>Children: Guardian consent + child assent</li><li>Disabilities: Extra time, simple explanations</li><li>Elderly: Gentle positioning, dignity maintenance</li><li>Marginalized: Awareness of stigma and power dynamics</li></ul>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Red Flags to Watch For</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Signs Consent May Not Be Voluntary:</h3><table border='1' cellpadding='5'><tr><td><strong>Red Flag</strong></td><td><strong>What It Might Mean</strong></td></tr><tr><td>Patient seems confused</td><td>May not understand what they're agreeing to</td></tr><tr><td>Looks to others for approval</td><td>May be under pressure from family/authority</td></tr><tr><td>Appears fearful or intimidated</td><td>Power imbalance or coercion</td></tr><tr><td>Agrees too quickly</td><td>May not have processed information</td></tr><tr><td>Body language shows reluctance</td><td>Non-verbal withdrawal of consent</td></tr></table><p><strong>If you see these signs:</strong></p><ul><li>Take more time to explain</li><li>Speak with patient privately</li><li>Ensure understanding</li><li>Confirm voluntary agreement</li><li>Consider declining to proceed</li></ul>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Safeguarding Scenarios</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>Scenario 1: Controlling Relationship</h3><p>You are photographing a woman's back lesion. Her husband answers all questions before she can speak. When you ask her directly for consent, she looks at him first before nodding.</p><p><strong>Concern:</strong> Possible lack of autonomous consent</p><p><strong>Response:</strong></p><ul><li>Politely ask husband to step out</li><li>Speak with patient alone</li><li>Reassess consent without pressure</li><li>Watch for signs of fear or coercion</li><li>Follow institutional DV protocols if concerned</li></ul><h3>Scenario 2: Distressed Adolescent</h3><p>Parent has consented for a 14-year-old's thigh lesion photo, but the teen keeps pulling clothing down and seems uncomfortable.</p><p><strong>Response:</strong></p><ul><li>Stop immediately</li><li>Ask adolescent directly if they want to proceed</li><li>Honor their decision even if parent consented</li><li>Respect their bodily autonomy</li></ul>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 20,
+              "y": 10,
+              "width": 100,
+              "height": 10,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Mandatory Reporting</h2>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 25,
+              "width": 80,
+              "height": 55,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h3>If You Observe or Suspect:</h3><ul><li>Child abuse or neglect</li><li>Elder abuse</li><li>Domestic violence</li><li>Human trafficking</li><li>Sexual exploitation</li><li>Any serious safeguarding concern</li></ul><h3>You Must:</h3><ul><li><strong>Follow your institution's reporting protocols</strong></li><li>Report to appropriate authorities as required by law</li><li>Document observations</li><li>Ensure patient safety</li><li><strong>Do NOT submit images showing signs of abuse</strong></li></ul><p><em>This is separate from the image collection project but is your professional duty.</em></p>"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "elements": [
+            {
+              "x": 10,
+              "y": 10,
+              "width": 80,
+              "height": 20,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Knowledge Check</h2><p>A parent has consented for their 12-year-old child's photos, but the child tells you directly they don't want to be photographed. What should you do?</p>"
+                }
+              }
+            },
+            {
+              "x": 10,
+              "y": 35,
+              "width": 80,
+              "height": 45,
+              "action": {
+                "library": "H5P.MultiChoice 1.16",
+                "params": {
+                  "question": "A parent has consented for their 12-year-old child's photos, but the child tells you directly they don't want to be photographed. What should you do?",
+                  "answers": [
+                    {
+                      "text": "Proceed with the photography since the parent has legal authority",
+                      "correct": false,
+                      "tip": "Incorrect. While parents have legal authority, children have bodily autonomy. Their objection should be respected."
+                    },
+                    {
+                      "text": "Stop and respect the child's wishes, even with parental consent",
+                      "correct": true,
+                      "tip": "Correct! Assent from the child is essential. Their bodily autonomy and comfort take priority."
+                    },
+                    {
+                      "text": "Ask the parent to convince the child to participate",
+                      "correct": false,
+                      "tip": "Incorrect. Pressuring a reluctant child violates their autonomy and could be traumatic."
+                    },
+                    {
+                      "text": "Proceed but take the photos very quickly",
+                      "correct": false,
+                      "tip": "Incorrect. This completely disregards the child's clearly stated objection."
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

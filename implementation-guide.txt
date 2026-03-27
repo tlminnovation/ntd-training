@@ -1,0 +1,166 @@
+SKINAPP TRAINING COURSE - H5P IMPLEMENTATION GUIDE
+====================================================
+
+OVERVIEW
+--------
+This H5P training course is designed to prepare medical staff for the WHO SkinNTD AI Image Collection Initiative. The course consists of 5 modules plus a final assessment.
+
+COURSE STRUCTURE
+----------------
+Module 1: Project Overview & Objectives
+- Introduction to the project
+- Understanding the AI training goals
+- Governance structure
+- Your role as a clinician
+- Format: Course Presentation with knowledge check
+
+Module 2: Clinical Photography Best Practices
+- Image quality requirements
+- Required metadata fields
+- Photography do's and don'ts
+- Special considerations for private areas
+- Format: Course Presentation with interactive elements
+
+Module 3: Informed Consent Procedures
+- Real-world scenarios
+- Language barriers
+- Ongoing consent
+- Withdrawal of consent
+- Format: Branching Scenario (interactive decision-making)
+
+Module 4: Anonymization & Privacy Protection
+- Why anonymization matters
+- What to remove from images
+- Technical safeguards
+- Before/after examples
+- Format: Course Presentation with examples
+
+Module 5: Safeguarding Principles
+- Five principles of dignity
+- Vulnerable populations
+- Red flags to watch for
+- Mandatory reporting
+- Format: Course Presentation with scenario examples
+
+Final Assessment
+- 10 comprehensive questions
+- Covers all 5 modules
+- 80% pass rate required
+- Multiple question types (MCQ, True/False)
+
+HOW TO USE THESE FILES
+----------------------
+
+OPTION 1: Moodle LMS (Recommended for WHO)
+1. Install H5P plugin in Moodle
+2. Navigate to your course
+3. Add "H5P" activity
+4. Upload each .h5p.json file
+5. Configure completion tracking
+6. Link modules sequentially
+
+OPTION 2: H5P.com (Cloud-based)
+1. Create account at h5p.com
+2. Use "Import" function
+3. Upload each JSON file
+4. Organize into course structure
+5. Share via link or embed
+
+OPTION 3: WordPress with H5P Plugin
+1. Install H5P plugin
+2. Create new H5P content
+3. Upload JSON files
+4. Embed in pages/posts
+5. Use LMS plugin for tracking
+
+OPTION 4: Drupal with H5P Module
+1. Enable H5P module
+2. Create H5P content type
+3. Import JSON files
+4. Configure permissions
+5. Track via Drupal's quiz module
+
+RECOMMENDED IMPLEMENTATION
+---------------------------
+For WHO SkinNTD project, we recommend:
+
+1. Host on existing Moodle instance (if available)
+2. Or use H5P.com for quick deployment
+3. Integrate with your existing KoboToolbox workflow:
+   - Completion certificate required before Kobo access
+   - Track completion in Kobo metadata
+   - Link to training in data collection forms
+
+TECHNICAL REQUIREMENTS
+----------------------
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Internet connection for cloud hosting
+- Mobile-responsive design works on tablets
+- No special plugins required for learners
+
+CUSTOMIZATION OPTIONS
+---------------------
+You can modify these H5P files to:
+- Add your organization's logo
+- Include localized language versions
+- Add your own scenarios
+- Include actual example photos (ensure anonymized!)
+- Adjust pass rates
+- Add additional modules
+
+CONTENT SPECIFIC NOTES
+---------------------
+- All medical content based on official WHO SkinNTD technical specs
+- Consent procedures follow WHO/TLM agreements
+- Safeguarding content follows international best practices
+- Can be translated to local languages
+- Scenarios can be adapted for local context
+
+ASSESSMENT DETAILS
+-----------------
+Pass Rate: 80% (8 out of 10 questions correct)
+Retakes: Unlimited
+Question Types: Multiple choice, True/False
+Coverage: All 5 modules
+Certificate: Can be configured in LMS
+
+ACCESSIBILITY
+-------------
+- Screen reader compatible
+- Keyboard navigation supported
+- Mobile responsive
+- Color contrast compliant
+- Multiple language support available
+
+SUPPORT & QUESTIONS
+-------------------
+For technical H5P questions: https://h5p.org/documentation
+For course content questions: Refer to technical specs document
+For implementation help: Consult your IT department
+
+FILES INCLUDED
+--------------
+1. course-structure.json - Course outline
+2. module1-overview.h5p.json - Project overview
+3. module2-photography.h5p.json - Photography best practices
+4. module3-consent-branching.h5p.json - Consent scenarios
+5. module4-privacy.h5p.json - Anonymization & privacy
+6. module5-safeguarding.h5p.json - Safeguarding principles
+7. final-assessment.h5p.json - Comprehensive assessment
+8. implementation-guide.txt - This file
+
+NEXT STEPS
+----------
+1. Review all content with clinical team
+2. Test in your chosen platform
+3. Customize with local examples if desired
+4. Translate to local languages if needed
+5. Deploy to training participants
+6. Track completion rates
+7. Gather feedback for improvements
+
+VERSION
+-------
+Version: 1.0
+Date: March 27, 2026
+Based on: Technical Specification Document v1.3

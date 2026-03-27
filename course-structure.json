@@ -1,0 +1,40 @@
+{
+  "title": "SkinApp Image Collection Training",
+  "language": "en",
+  "h5pVersion": "1.0",
+  "metadata": {
+    "title": "SkinApp Image Collection Training for Medical Staff",
+    "license": "U",
+    "authors": [],
+    "changes": [],
+    "contentType": "Course",
+    "description": "Training course for medical staff participating in the WHO SkinNTD AI image collection initiative",
+    "icon": "images/course-icon.svg"
+  },
+  "content": [
+    {
+      "title": "Module 1: Project Overview & Objectives",
+      "content": "overview"
+    },
+    {
+      "title": "Module 2: Clinical Photography Best Practices",
+      "content": "photography"
+    },
+    {
+      "title": "Module 3: Informed Consent Procedures",
+      "content": "consent"
+    },
+    {
+      "title": "Module 4: Anonymization & Privacy Protection",
+      "content": "privacy"
+    },
+    {
+      "title": "Module 5: Safeguarding Principles",
+      "content": "safeguarding"
+    },
+    {
+      "title": "Final Assessment",
+      "content": "assessment"
+    }
+  ]
+}
