@@ -3,112 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkinApp Training Course - Local Version</title>
+    <title>SkinApp Training Course - Complete</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f5f5;
+            line-height: 1.6;
+            color: #333;
         }
         
         .header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: 600;
         }
         
         .header p {
             margin: 10px 0 0 0;
             opacity: 0.9;
+            font-size: 16px;
         }
         
         .nav-container {
-            background-color: #34495e;
+            background-color: #2c3e50;
             padding: 15px;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .module-nav {
-            display: inline-flex;
+            display: flex;
             gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .nav-btn {
-            background-color: #3498db;
+            background-color: #34495e;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            border: 2px solid transparent;
+            padding: 10px 18px;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 14px;
-            transition: background-color 0.3s;
+            font-size: 13px;
+            transition: all 0.3s;
+            font-weight: 500;
         }
         
         .nav-btn:hover {
-            background-color: #2980b9;
+            background-color: #3498db;
+            transform: translateY(-2px);
         }
         
         .nav-btn.active {
             background-color: #e74c3c;
+            border-color: #c0392b;
         }
         
         .nav-btn.completed {
             background-color: #27ae60;
+            border-color: #229954;
         }
         
         .content-area {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 0 20px;
             min-height: 600px;
         }
         
-        .module-info {
-            background-color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+        .module-content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            display: none;
         }
         
-        .module-info h2 {
-            margin: 0 0 10px 0;
+        .module-content.active {
+            display: block;
+        }
+        
+        .module-content h2 {
             color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
         }
         
-        .module-info p {
-            margin: 5px 0;
-            color: #7f8c8d;
+        .module-content h3 {
+            color: #34495e;
+            font-size: 22px;
+            margin: 30px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #3498db;
         }
         
-        .h5p-container {
-            border: 2px solid #ecf0f1;
-            border-radius: 5px;
-            padding: 20px;
-            min-height: 500px;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 50px;
+        .module-content h4 {
+            color: #555;
             font-size: 18px;
-            color: #7f8c8d;
+            margin: 25px 0 10px 0;
+        }
+        
+        .module-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .module-content ul, .module-content ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .module-content li {
+            margin-bottom: 8px;
         }
         
         .welcome-screen {
+            background: white;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             text-align: center;
-            padding: 50px 20px;
         }
         
         .welcome-screen h2 {
@@ -120,24 +154,9 @@
         .welcome-screen p {
             font-size: 18px;
             color: #555;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
-        
-        .start-btn {
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        .start-btn:hover {
-            background-color: #229954;
+            line-height: 1.8;
         }
         
         .module-list {
@@ -145,13 +164,17 @@
             max-width: 600px;
             margin: 30px auto;
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
         }
         
         .module-list h3 {
             color: #2c3e50;
             margin-top: 0;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
         }
         
         .module-list ul {
@@ -160,84 +183,326 @@
         }
         
         .module-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
+            padding: 12px 0;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 15px;
         }
         
         .module-list li:last-child {
             border-bottom: none;
         }
         
-        .progress-bar {
-            background-color: #ecf0f1;
-            height: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 600px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            background-color: #27ae60;
-            height: 100%;
-            width: 0%;
-            transition: width 0.3s;
-        }
-        
-        .progress-text {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .certificate {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 30px auto;
-            max-width: 600px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .certificate h2 {
-            margin: 0 0 20px 0;
-            font-size: 28px;
-        }
-        
-        .certificate p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        
-        .certificate-code {
-            background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 20px;
-            margin: 20px 0;
-            letter-spacing: 2px;
+        .module-list strong {
+            color: #e74c3c;
         }
         
         .instructions {
             background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 5px 5px 0;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 0 8px 8px 0;
+            max-width: 600px;
+            text-align: left;
         }
         
         .instructions h3 {
             margin-top: 0;
             color: #856404;
+            border: none;
+            padding: 0;
         }
         
-        .instructions p {
+        .instructions p, .instructions li {
             color: #856404;
-            margin: 5px 0;
+            margin: 8px 0;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .start-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .progress-container {
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        
+        .progress-bar {
+            background-color: #e9ecef;
+            height: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            text-align: center;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        
+        .question-box {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .question-box h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .answer-option {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .answer-option:hover {
+            background: #e3f2fd;
+            border-color: #3498db;
+        }
+        
+        .answer-option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        
+        .answer-option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        
+        .explanation {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 5px 5px 0;
+            display: none;
+        }
+        
+        .explanation.show {
+            display: block;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #dee2e6;
+        }
+        
+        .nav-btn-course {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-prev {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-prev:hover {
+            background-color: #5a6268;
+        }
+        
+        .btn-next {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .checklist {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+            transform: scale(1.2);
+        }
+        
+        .certificate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .certificate h2 {
+            margin: 0 0 20px 0;
+            font-size: 32px;
+            border: none;
+            padding: 0;
+            color: white;
+        }
+        
+        .certificate p {
+            font-size: 16px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .certificate-code {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            margin: 25px 0;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .scenario-box {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .scenario-box h4 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .module-content {
+                padding: 20px;
+            }
+            
+            .module-content h2 {
+                font-size: 24px;
+            }
+            
+            .nav-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .welcome-screen {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -249,217 +514,770 @@
     
     <div class="nav-container">
         <div class="module-nav">
-            <button class="nav-btn" onclick="showWelcome()">Home</button>
-            <button class="nav-btn" onclick="loadModule(1)">Module 1</button>
-            <button class="nav-btn" onclick="loadModule(2)">Module 2</button>
-            <button class="nav-btn" onclick="loadModule(3)">Module 3</button>
-            <button class="nav-btn" onclick="loadModule(4)">Module 4</button>
-            <button class="nav-btn" onclick="loadModule(5)">Module 5</button>
-            <button class="nav-btn" onclick="loadModule(6)">Assessment</button>
+            <button class="nav-btn active" onclick="showModule('welcome')">Home</button>
+            <button class="nav-btn" onclick="showModule('module1')">Module 1</button>
+            <button class="nav-btn" onclick="showModule('module2')">Module 2</button>
+            <button class="nav-btn" onclick="showModule('module3')">Module 3</button>
+            <button class="nav-btn" onclick="showModule('module4')">Module 4</button>
+            <button class="nav-btn" onclick="showModule('module5')">Module 5</button>
+            <button class="nav-btn" onclick="showModule('assessment')">Assessment</button>
         </div>
     </div>
     
     <div class="content-area">
-        <div id="welcome-screen" class="welcome-screen">
+        <!-- Welcome Screen -->
+        <div id="welcome" class="welcome-screen">
             <h2>Welcome to the SkinApp Training Course</h2>
             <p>
-                This interactive course prepares medical staff to collect clinical images of leprosy 
-                and skin NTDs for the WHO SkinNTD AI training project. You will learn about:
+                This comprehensive course prepares medical staff to collect clinical images of leprosy 
+                and skin NTDs for the WHO SkinNTD AI training project. You will learn about project 
+                objectives, photography best practices, informed consent, privacy protection, and 
+                safeguarding principles.
             </p>
             
             <div class="module-list">
-                <h3>Course Modules:</h3>
+                <h3>📚 Course Modules:</h3>
                 <ul>
                     <li><strong>Module 1:</strong> Project Overview & Objectives (~10 min)</li>
                     <li><strong>Module 2:</strong> Clinical Photography Best Practices (~12 min)</li>
                     <li><strong>Module 3:</strong> Informed Consent Procedures (~15 min)</li>
-                    <li><strong>Module 4:</strong> Anonymization & Privacy Protection (~10 min)</li>
-                    <li><strong>Module 5:</strong> Safeguarding Principles (~10 min)</li>
+                    <li><strong>Module 4:</strong> Anonymization & Privacy Protection (~12 min)</li>
+                    <li><strong>Module 5:</strong> Safeguarding Principles (~12 min)</li>
                     <li><strong>Final Assessment:</strong> Comprehensive test (~10 min)</li>
                 </ul>
-                <p><strong>Total Duration:</strong> 45-60 minutes</p>
-                <p><strong>Pass Rate:</strong> 80% required for certification</p>
+                <p style="margin-top: 15px; font-weight: 600; color: #2c3e50;">
+                    Total Duration: 45-60 minutes | Pass Rate: 80%
+                </p>
             </div>
             
             <div class="instructions">
-                <h3>How to Use This Course:</h3>
-                <p>1. Click "Start Course" below or select a module from the navigation bar</p>
-                <p>2. Complete each module in order (recommended)</p>
-                <p>3. Take the final assessment</p>
-                <p>4. Achieve 80% to receive your completion certificate</p>
-                <p>5. Use your certificate code to access the image collection system</p>
+                <h3>📖 How to Use This Course:</h3>
+                <ol>
+                    <li>Click <strong>"Start Course"</strong> below or select a module from the navigation bar</li>
+                    <li>Complete each module in order (recommended but not required)</li>
+                    <li>Answer the knowledge check questions in each module</li>
+                    <li>Take the final assessment at the end</li>
+                    <li>Achieve <strong>80%</strong> to receive your completion certificate</li>
+                    <li>Use your certificate code to access the image collection system</li>
+                </ol>
             </div>
             
-            <button class="start-btn" onclick="loadModule(1)">Start Course</button>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0% Complete (0/7 modules)</div>
             </div>
-            <div class="progress-text" id="progress-text">0% Complete</div>
+            
+            <button class="start-btn" onclick="showModule('module1')">Start Course</button>
+        </div>
+
+        <!-- Module 1 Content -->
+        <div id="module1" class="module-content">
+            <h2>Module 1: Project Overview & Objectives</h2>
+            
+            <div class="highlight-box">
+                <strong>Learning Objectives:</strong> By the end of this module, you will understand the WHO SkinNTD AI project, the governance structure, your role as a contributing clinician, and the ethical principles guiding this initiative.
+            </div>
+            
+            <h3>1.1 Why This Project Matters</h3>
+            
+            <p><strong>The Challenge:</strong> Leprosy remains underdiagnosed in many regions worldwide. Despite being curable, delayed diagnosis leads to permanent disabilities, social stigma, continued transmission, and economic hardship for affected families.</p>
+            
+            <p><strong>The Role of AI:</strong> Artificial Intelligence can help bridge the diagnostic gap by assisting primary health workers who lack specialist training, providing consistent diagnostic support across regions, enabling earlier detection and treatment, and reducing the burden on scarce dermatology specialists.</p>
+            
+            <p><strong>The Need for Quality Data:</strong> AI systems learn from examples. To create an effective diagnostic tool, we need thousands of diverse clinical images from different skin tones (Fitzpatrick types I-VI), various geographic regions, different disease stages, and properly anonymized and consented images.</p>
+            
+            <div class="success-box">
+                <strong>Your Contribution:</strong> As a contributing clinician, you play a critical role in this global health initiative. Each high-quality image you submit helps train AI systems that will benefit patients in underserved communities, support healthcare workers with limited resources, and contribute to the global effort to eliminate leprosy.
+            </div>
+            
+            <h3>1.2 Understanding the AI Training Process</h3>
+            
+            <p><strong>How AI Learns from Images:</strong> Machine learning systems analyze visual patterns in thousands of clinical images, learn correlations between visual features and diagnoses, build predictive models, and improve accuracy through exposure to diverse examples.</p>
+            
+            <p><strong>What Makes a Good Training Image:</strong></p>
+            <ul>
+                <li><strong>Clinically informative:</strong> Shows the condition clearly</li>
+                <li><strong>Properly labeled:</strong> Includes accurate metadata and diagnosis</li>
+                <li><strong>Anonymized:</strong> Contains no identifying patient information</li>
+                <li><strong>Diverse:</strong> Represents different populations and presentations</li>
+                <li><strong>High quality:</strong> In focus, well-lit, properly framed</li>
+            </ul>
+            
+            <h3>1.3 Governance Structure</h3>
+            
+            <p>The WHO SkinNTD AI Image Collection Initiative operates through a four-level governance structure:</p>
+            
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>Parties</th>
+                    <th>Responsibilities</th>
+                </tr>
+                <tr>
+                    <td><strong>Level 1</strong></td>
+                    <td>WHO - TLM International</td>
+                    <td>Strategic oversight, ethical standards, licensing, global health alignment</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 2</strong></td>
+                    <td>TLM - Partner Organizations</td>
+                    <td>Partnership agreements, training, compliance, data security</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 3</strong></td>
+                    <td>Partner Org - Clinicians</td>
+                    <td>Authorization, institutional support, quality control</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 4</strong></td>
+                    <td>Clinician - Patient</td>
+                    <td>Direct patient care, informed consent, dignity, clinical judgment</td>
+                </tr>
+            </table>
+            
+            <div class="warning-box">
+                <strong>Your Position:</strong> You are at Level 4 with direct responsibility to patients. You have the authority to photograph eligible patients but must follow institutional protocols and maintain your ethical obligations to patients. Patient welfare always comes first.
+            </div>
+            
+            <h3>1.4 Project Objectives</h3>
+            
+            <p><strong>Primary Objective:</strong> To build a diverse, high-quality dataset of clinical images of leprosy and skin NTDs for training AI diagnostic systems for deployment in resource-limited healthcare settings.</p>
+            
+            <p><strong>Specific Goals:</strong></p>
+            <ul>
+                <li>Collect 10,000+ images across diverse populations</li>
+                <li>Ensure geographic diversity from all WHO regions</li>
+                <li>Represent all skin phototypes (Fitzpatrick I-VI)</li>
+                <li>Include multiple disease presentations and stages</li>
+                <li>Maintain highest ethical standards throughout</li>
+            </ul>
+            
+            <h3>1.5 Your Role and Responsibilities</h3>
+            
+            <p><strong>Core Responsibilities:</strong></p>
+            
+            <div class="checklist">
+                <h4>Patient Care</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pc1">
+                    <label for="pc1">Prioritize patient welfare above all else</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pc2">
+                    <label for="pc2">Provide appropriate clinical care regardless of participation</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pc3">
+                    <label for="pc3">Respect patient autonomy and decisions</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pc4">
+                    <label for="pc4">Maintain professional standards at all times</label>
+                </div>
+            </div>
+            
+            <div class="checklist">
+                <h4>Informed Consent</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" id="ic1">
+                    <label for="ic1">Explain the project clearly to patients</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="ic2">
+                    <label for="ic2">Ensure voluntary participation</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="ic3">
+                    <label for="ic3">Document consent properly</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="ic4">
+                    <label for="ic4">Allow withdrawal at any time</label>
+                </div>
+            </div>
+            
+            <h3>1.6 Ethical Principles</h3>
+            
+            <p><strong>The project is guided by four core ethical principles:</strong></p>
+            
+            <ol>
+                <li><strong>Respect for Persons:</strong> Autonomy, dignity, and extra protection for vulnerable individuals</li>
+                <li><strong>Beneficence:</strong> Benefit patients through improved diagnosis and contribute to global health</li>
+                <li><strong>Non-maleficence:</strong> Do no harm, protect from stigma, prevent privacy breaches, avoid exploitation</li>
+                <li><strong>Justice:</strong> Fair distribution of benefits, inclusion of diverse populations, global health equity</li>
+            </ol>
+            
+            <h3>1.7 Knowledge Check</h3>
+            
+            <div class="question-box">
+                <h4>Question 1: What is the PRIMARY goal of the WHO SkinNTD AI Image Collection Initiative?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    A) To create a commercial database of skin disease images
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">
+                    B) To train AI systems for improved leprosy and skin NTD diagnosis
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    C) To replace dermatologists with AI technology
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    D) To develop new medications for leprosy
+                </label>
+                <div class="explanation">
+                    <strong>Correct!</strong> The initiative aims to build AI diagnostic tools to help healthcare workers in resource-limited settings. This is a non-commercial public health initiative designed to support, not replace, healthcare professionals.
+                </div>
+            </div>
+            
+            <div class="question-box">
+                <h4>Question 2: In the governance structure, at which level do you (the clinician) have direct responsibility to patients?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    A) Level 1: WHO oversight
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    B) Level 2: Partnership management
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    C) Level 3: Partner Organization - Clinician
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">
+                    D) Level 4: Direct patient relationship
+                </label>
+                <div class="explanation">
+                    <strong>Correct!</strong> While you're employed/associated with Level 3 (Partner Organization), your direct responsibility is Level 4 - the Clinician-Patient relationship where you have ethical obligations to patient welfare.
+                </div>
+            </div>
+            
+            <div class="question-box">
+                <h4>Question 3: Which of the following is NOT a responsibility of contributing clinicians?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    A) Prioritize patient welfare
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    B) Ensure proper informed consent
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">
+                    C) Share images on social media for awareness
+                </label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">
+                    D) Maintain patient dignity
+                </label>
+                <div class="explanation">
+                    <strong>Correct!</strong> Images must NEVER be shared outside the secure system. This would violate patient privacy and the terms of participation. All images must remain strictly confidential.
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn-course btn-prev" onclick="showModule('welcome')">← Previous</button>
+                <button class="nav-btn-course btn-next" onclick="showModule('module2')">Next Module →</button>
+            </div>
+        </div>
+
+        <!-- Additional modules would continue here -->
+        <!-- Due to length, I'll include a placeholder for the remaining modules -->
+        
+        <!-- Module 2 Content -->
+        <div id="module2" class="module-content">
+            <h2>Module 2: Clinical Photography Best Practices</h2>
+            
+            <div class="highlight-box">
+                <strong>Learning Objectives:</strong> By the end of this module, you will be able to capture high-quality clinical images suitable for AI training and accurately complete all 10 required metadata fields.
+            </div>
+            
+            <h3>2.1 Why Image Quality Matters</h3>
+            <p>The effectiveness of AI diagnostic systems depends directly on the quality of training data. High-quality images enable AI to distinguish between conditions and work across diverse populations accurately.</p>
+            
+            <h3>2.2 The 10 Required Metadata Fields</h3>
+            <p>Every image submission must include these mandatory fields:</p>
+            <ul>
+                <li><strong>1. Partner Organization:</strong> Tracks the contributing organization.</li>
+                <li><strong>2. Clinician Name:</strong> Identifies the clinician (for verification).</li>
+                <li><strong>3. Country:</strong> Ensures geographic diversity.</li>
+                <li><strong>4. Clinical Form:</strong> Ridley-Jopling classification (TT, BT, BB, BL, LL, etc.).</li>
+                <li><strong>5. Operational Classification:</strong> PB (Paucibacillary) or MB (Multibacillary).</li>
+                <li><strong>6. Reaction Status:</strong> Identifies inflammatory complications (Type 1, Type 2, etc.).</li>
+                <li><strong>7. Gender:</strong> Ensures gender balance in data.</li>
+                <li><strong>8. Age Group:</strong> Ensures age diversity.</li>
+                <li><strong>9. Phototype (Fitzpatrick Scale):</strong> CRITICAL for ensuring AI works across all skin tones (Types I-VI).</li>
+                <li><strong>10. Additional Notes:</strong> Context like "multiple lesions" or "facial involvement".</li>
+            </ul>
+            
+            <h3>2.3 Technical Requirements</h3>
+            <div class="checklist">
+                <h4>Quality Checklist</h4>
+                <div class="checklist-item"><input type="checkbox" id="q1"><label for="q1">Minimum Resolution: 1920 x 1080 (Full HD)</label></div>
+                <div class="checklist-item"><input type="checkbox" id="q2"><label for="q2">Sharp Focus: Lesion must be in sharp focus (use macro mode)</label></div>
+                <div class="checklist-item"><input type="checkbox" id="q3"><label for="q3">Lighting: Use natural or clinical lighting; avoid harsh shadows</label></div>
+                <div class="checklist-item"><input type="checkbox" id="q4"><label for="q4">Framing: Include surrounding healthy skin for context</label></div>
+                <div class="checklist-item"><input type="checkbox" id="q5"><label for="q5">Reference: Use a ruler or coin for scale when size matters</label></div>
+            </div>
+
+            <div class="warning-box">
+                <strong>Mandatory Removal:</strong> You MUST remove or obscure all identifying information: faces, names on wristbands, tattoos, jewelry, and hospital logos.
+            </div>
+
+            <h3>2.4 Knowledge Check</h3>
+            <div class="question-box">
+                <h4>Question 1: Which metadata field is used to ensure skin tone diversity?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">A) Age Group</label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">B) Phototype (Fitzpatrick Scale)</label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">C) Clinical Form</label>
+                <div class="explanation"><strong>Correct!</strong> The Fitzpatrick Scale (I-VI) documents skin response to the sun, ensuring the AI performs equitably across all skin types.</div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn-course btn-prev" onclick="showModule('module1')">← Previous</button>
+                <button class="nav-btn-course btn-next" onclick="showModule('module3')">Next Module →</button>
+            </div>
         </div>
         
-        <div id="module-container" style="display: none;">
-            <div class="module-info">
-                <h2 id="module-title"></h2>
-                <p id="module-description"></p>
+        <!-- Module 3 Content -->
+        <div id="module3" class="module-content">
+            <h2>Module 3: Informed Consent Procedures</h2>
+            
+            <div class="highlight-box">
+                <strong>Learning Objectives:</strong> Learn the elements of valid informed consent, how to navigate language barriers, and how to respond professionally to the withdrawal of consent.
             </div>
-            <div id="h5p-content" class="h5p-container">
-                <div class="loading">Loading module content...</div>
+            
+            <h3>3.1 The 4 Pillars of Consent</h3>
+            <p>Valid informed consent requires more than a signature; it is a process involving:</p>
+            <ul>
+                <li><strong>Information:</strong> Clear explanation of purpose (WHO AI training).</li>
+                <li><strong>Comprehension:</strong> Ensuring the patient truly understands the request.</li>
+                <li><strong>Voluntariness:</strong> Freedom to decline without penalty or pressure.</li>
+                <li><strong>Capacity:</strong> Ability to make an informed decision (not distressed or impaired).</li>
+            </ul>
+
+            <div class="scenario-box">
+                <h4>Scenario: Language Barriers</h4>
+                <p>If a patient speaks a language you don't understand, <strong>NEVER</strong> use family members as interpreters for consent. Always use professional interpreters or phone services to ensure accurate, confidential, and pressure-free communication.</p>
+            </div>
+
+            <h3>3.2 Continuous Consent</h3>
+            <p>Consent is not a one-time event. You must check in with the patient:</p>
+            <ol>
+                <li>Before the first photograph.</li>
+                <li>Between captures (especially for different body areas).</li>
+                <li>Immediately if you notice non-verbal cues of distress (tensing up, looking away).</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>When to STOP:</strong> If a patient says "Stop" or "I've changed my mind," you must stop immediately, thank them, and never pressure them to continue. This will NOT affect their medical care.
+            </div>
+
+            <h3>3.3 Knowledge Check</h3>
+            <div class="question-box">
+                <h4>Question: A parent has consented for their 10-year-old child, but the child says "I don't want to." What should you do?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">A) Proceed because the parent has legal authority</label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">B) Stop immediately and respect the child's wishes</label>
+                <div class="explanation"><strong>Correct!</strong> While parents provide legal consent, children should provide <strong>assent</strong>. If they refuse, respect their bodily autonomy. Never force a child to be photographed.</div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn-course btn-prev" onclick="showModule('module2')">← Previous</button>
+                <button class="nav-btn-course btn-next" onclick="showModule('module4')">Next Module →</button>
+            </div>
+        </div>
+        
+        <!-- Module 4 Content -->
+        <div id="module4" class="module-content">
+            <h2>Module 4: Anonymization & Privacy Protection</h2>
+            
+            <div class="highlight-box">
+                <strong>Learning Objectives:</strong> Identify and remove all personal identifiers from clinical images to protect patient privacy and prevent stigma.
+            </div>
+            
+            <h3>4.1 The Anonymization Rule</h3>
+            <p>Protecting the patient's identity is an ethical and legal mandate. Even with consent, you must remove features that could link the photo to a human being.</p>
+            
+            <h4>What to Remove (The Big Five):</h4>
+            <ol>
+                <li><strong>Faces:</strong> Entire face, eyes, or ears.</li>
+                <li><strong>Text:</strong> Hospital wristbands, name tags, or handwritten notes.</li>
+                <li><strong>Unique Features:</strong> Tattoos (if distinctive), birthmarks (not related to lesion), or jewelry.</li>
+                <li><strong>Logos:</strong> Institutional logos on gowns or bedsheets.</li>
+                <li><strong>Metadata:</strong> EXIF data (GPS coordinates) attached to digital files.</li>
+            </ol>
+
+            <div class="checklist">
+                <h4>Anonymization Techniques</h4>
+                <div class="checklist-item"><input type="checkbox" id="a1"><label for="a1"><strong>Cropping:</strong> Irreversibly remove identifying edges (safest method)</label></div>
+                <div class="checklist-item"><input type="checkbox" id="a2"><label for="a2"><strong>Covering:</strong> Use solid black blocks to hide features in important areas</label></div>
+                <div class="checklist-item"><input type="checkbox" id="a3"><label for="a3"><strong>Metadata Stripping:</strong> Use tools to wipe GPS and device info</label></div>
+            </div>
+
+            <div class="warning-box">
+                <strong>Security Protocol:</strong> Delete images from your personal phone or device immediately after they are securely uploaded to the authorized system. <strong>Never</strong> share images via WhatsApp, SMS, or social media.
+            </div>
+
+            <h3>4.2 Knowledge Check</h3>
+            <div class="question-box">
+                <h4>Question: Which of these should NOT be removed from a clinical photo?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">A) A hospital wristband showing the patient's name</label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">B) The clinical lesion being documented</label>
+                <label class="answer-option" onclick="checkAnswer(this, false)">C) A distinctive tattoo on the patient's arm</label>
+                <div class="explanation"><strong>Correct!</strong> The lesion is the subject of the study. All other items are potential identifiers that must be removed.</div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn-course btn-prev" onclick="showModule('module3')">← Previous</button>
+                <button class="nav-btn-course btn-next" onclick="showModule('module5')">Next Module →</button>
+            </div>
+        </div>
+        
+        <!-- Module 5 Content -->
+        <div id="module5" class="module-content">
+            <h2>Module 5: Safeguarding Principles</h2>
+            
+            <div class="highlight-box">
+                <strong>Learning Objectives:</strong> Identify safeguarding concerns and fulfill your mandatory reporting duties as a healthcare provider.
+            </div>
+            
+            <h3>5.1 The Principles of Dignity</h3>
+            <p>Safeguarding ensures that patients live free from harm, abuse, and neglect.</p>
+            <ul>
+                <li><strong>Respect for Persons:</strong> Treat everyone with inherent worth. Use private spaces and respectful communication.</li>
+                <li><strong>Sensitive Body Areas:</strong> Genitalia, breasts, or buttocks require explicit consent, minimal personnel, and professional draping.</li>
+                <li><strong>Vulnerability:</strong> Provide extra protection for children, the elderly, and those from marginalized communities.</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Mandatory Reporting:</strong> If you suspect child abuse, elder abuse, or domestic violence during your examination, you must follow your institution's reporting protocols immediately. <strong>Safety takes precedence over the AI project.</strong>
+            </div>
+
+            <div class="scenario-box">
+                <h4>When to STOP:</h4>
+                <p>If you observe signs of coercion (e.g., a patient looking to a spouse for permission repeatedly) or fear, <strong>STOP</strong> the process and speak to the patient privately. Do not submit photos if you doubt consent was voluntary.</p>
+            </div>
+
+            <h3>5.2 Knowledge Check</h3>
+            <div class="question-box">
+                <h4>Question: You notice unexplained bruises on a child during photography. What is your priority?</h4>
+                <label class="answer-option" onclick="checkAnswer(this, false)">A) Finish the photography to help global leprosy diagnosis</label>
+                <label class="answer-option" onclick="checkAnswer(this, true)">B) Follow child protection protocols immediately; do not submit the photo</label>
+                <div class="explanation"><strong>Correct!</strong> Patient safety is always the first priority. Suspected abuse must be reported per local laws and institutional policy.</div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn-course btn-prev" onclick="showModule('module4')">← Previous</button>
+                <button class="nav-btn-course btn-next" onclick="showModule('assessment')">Final Assessment →</button>
+            </div>
+        </div>
+        
+        <!-- Final Assessment -->
+        <div id="assessment" class="module-content">
+            <h2>Final Assessment</h2>
+            <div class="highlight-box">
+                This assessment covers all 5 modules. You need 80% (16/20 questions correct) to pass and receive your certificate.
+            </div>
+            
+            <div id="quiz-container">
+                <!-- Question 1 -->
+                <div class="question-box">
+                    <h4>1. What is the PRIMARY goal of the WHO SkinNTD AI Image Collection Initiative?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) To create a commercial database</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) To train AI systems for improved leprosy diagnosis</label>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">C) To replace dermatologists</label>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-box">
+                    <h4>2. At which level do you have direct responsibility to patients?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Level 1: WHO oversight</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Level 4: Direct patient relationship</label>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-box">
+                    <h4>3. You can withdraw from the project if you have ethical concerns.</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">True</label>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">False</label>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-box">
+                    <h4>4. Which is NOT a core ethical principle guiding this project?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Respect for Persons</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Profit Maximization</label>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-box">
+                    <h4>5. Which field ensures skin tone diversity in the AI dataset?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Age Group</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Phototype (Fitzpatrick Scale)</label>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-box">
+                    <h4>6. You should keep copies of patient photos on your phone after upload.</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">True</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">False</label>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question-box">
+                    <h4>7. When photographing private areas, which is required?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Full-body context photo</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Explicit consent for that specific region</label>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question-box">
+                    <h4>8. What is the minimum recommended resolution?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) 640 x 480</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) 1920 x 1080 (Full HD)</label>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="question-box">
+                    <h4>9. If a patient speaks a different language, can their child translate for consent?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Yes, family knows best</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) No, use a professional or phone service</label>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question-box">
+                    <h4>10. Consent is a one-time event before photography begins.</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">True</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">False</label>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="question-box">
+                    <h4>11. If a patient says "Stop" mid-procedure, what do you do?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Encourage them to finish</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Stop immediately and thank them</label>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="question-box">
+                    <h4>12. Which is a red flag for non-voluntary consent?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">A) Patient looks to family before answering</label>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">B) Patient asks many questions</label>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="question-box">
+                    <h4>13. Which does NOT need to be removed from clinical photos?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Patient wristband</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) The clinical lesion being documented</label>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="question-box">
+                    <h4>14. If you discover a privacy breach, try to fix it yourself first.</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">True</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">False</label>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="question-box">
+                    <h4>15. What is the first step in anonymization?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Apply digital blurring</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Review immediately after photography</label>
+                </div>
+
+                <!-- Question 16 -->
+                <div class="question-box">
+                    <h4>16. Which technique is generally most secure?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Blurring</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Cropping out the identifier</label>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="question-box">
+                    <h4>17. A 10-year-old says "I don't want to" but parent says yes. Do you proceed?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Yes</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) No</label>
+                </div>
+
+                <!-- Question 18 -->
+                <div class="question-box">
+                    <h4>18. Report suspected child abuse only if 100% certain.</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">True</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">False</label>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="question-box">
+                    <h4>19. A patient becomes distressed during private area photography. First step?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Finish quickly</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Stop immediately and cover the patient</label>
+                </div>
+
+                <!-- Question 20 -->
+                <div class="question-box">
+                    <h4>20. You notice unexplained bruises on a child. What do you do?</h4>
+                    <label class="answer-option" onclick="checkAnswer(this, false)">A) Submit the photo anyway</label>
+                    <label class="answer-option" onclick="checkAnswer(this, true)">B) Follow child protection protocols; do not submit</label>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn-course btn-prev" onclick="showModule('module5')">← Previous</button>
+                <button class="nav-btn-course btn-next" onclick="calculateResult()">Finish & See Result</button>
             </div>
         </div>
     </div>
 
-    <!-- Load H5P Standalone -->
-    <script src="https://cdn.jsdelivr.net/npm/h5p-standalone@3.0.0/dist/main.bundle.js"></script>
-    
     <script>
-        // Module definitions
-        const modules = {
-            1: {
-                title: "Module 1: Project Overview & Objectives",
-                description: "Learn about the WHO SkinNTD AI project, governance structure, and your role as a contributing clinician.",
-                file: "./modules/overview",
-                duration: "10 minutes"
-            },
-            2: {
-                title: "Module 2: Clinical Photography Best Practices",
-                description: "Master the techniques for capturing high-quality diagnostic images and learn the required metadata fields.",
-                file: "./modules/photography",
-                duration: "12 minutes"
-            },
-            3: {
-                title: "Module 3: Informed Consent Procedures",
-                description: "Navigate real-world consent scenarios including language barriers, ongoing consent, and withdrawal.",
-                file: "./modules/consent",
-                duration: "15 minutes"
-            },
-            4: {
-                title: "Module 4: Anonymization & Privacy Protection",
-                description: "Learn how to protect patient identity by removing identifying information from clinical photos.",
-                file: "./modules/privacy",
-                duration: "10 minutes"
-            },
-            5: {
-                title: "Module 5: Safeguarding Principles",
-                description: "Understand dignity principles, vulnerable population protection, and mandatory reporting requirements.",
-                file: "./modules/safeguarding",
-                duration: "10 minutes"
-            },
-            6: {
-                title: "Final Assessment",
-                description: "Complete the comprehensive assessment covering all 5 modules. You need 80% to pass.",
-                file: "./modules/assessment",
-                duration: "10 minutes"
-            }
-        };
-        
         let completedModules = new Set();
-        let currentModule = null;
+        let currentModule = 'welcome';
+        let quizScore = 0;
+        let totalQuizQuestions = 20;
         
-        function showWelcome() {
-            document.getElementById('welcome-screen').style.display = 'block';
-            document.getElementById('module-container').style.display = 'none';
-            updateNavButtons();
-        }
-        
-        function loadModule(moduleNum) {
-            const module = modules[moduleNum];
-            if (!module) return;
+        function showModule(moduleId) {
+            // Hide all modules
+            document.querySelectorAll('.module-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById('welcome').style.display = 'none';
             
-            currentModule = moduleNum;
-            
-            // Update UI
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('module-container').style.display = 'block';
-            document.getElementById('module-title').textContent = module.title;
-            document.getElementById('module-description').textContent = 
-                module.description + " (Duration: " + module.duration + ")";
-            
-            // Clear previous content
-            const container = document.getElementById('h5p-content');
-            container.innerHTML = '<div class="loading">Loading module content...</div>';
-            
-            // Load H5P content
-            try {
-                new H5PStandalone.H5P(container, {
-                    h5pJsonPath: module.file,
-                    frameJs: 'https://cdn.jsdelivr.net/npm/h5p-standalone@3.0.0/dist/frame.bundle.js',
-                    frameCss: 'https://cdn.jsdelivr.net/npm/h5p-standalone@3.0.0/dist/styles/h5p.css'
-                });
-                
-                // Mark as completed when loaded (simplified - in real implementation, track actual completion)
-                setTimeout(() => {
-                    completedModules.add(moduleNum);
+            // Show selected module
+            if (moduleId === 'welcome') {
+                document.getElementById('welcome').style.display = 'block';
+            } else {
+                const target = document.getElementById(moduleId);
+                if (target) {
+                    target.classList.add('active');
+                    completedModules.add(moduleId);
                     updateProgress();
-                    updateNavButtons();
-                }, 5000);
-                
-            } catch (error) {
-                container.innerHTML = '<div style="color: red; padding: 20px;">' +
-                    '<h3>Error Loading Module</h3>' +
-                    '<p>Could not load the module content. Please ensure:</p>' +
-                    '<ul>' +
-                    '<li>All .h5p.json files are in the same folder as this HTML file</li>' +
-                    '<li>You have an internet connection (for the H5P library)</li>' +
-                    '<li>The file "' + module.file + '" exists</li>' +
-                    '</ul>' +
-                    '<p>Technical error: ' + error.message + '</p>' +
-                    '</div>';
+                }
             }
             
+            currentModule = moduleId;
             updateNavButtons();
+            window.scrollTo(0, 0);
         }
         
         function updateProgress() {
-            const totalModules = 6;
+            const totalModules = 7; // welcome + 5 modules + assessment
             const completed = completedModules.size;
             const percentage = Math.round((completed / totalModules) * 100);
             
-            document.getElementById('progress-fill').style.width = percentage + '%';
-            document.getElementById('progress-text').textContent = percentage + '% Complete';
-            
-            // Show certificate if all modules completed
-            if (completed === totalModules) {
-                showCertificate();
-            }
+            const fill = document.getElementById('progress-fill');
+            const text = document.getElementById('progress-text');
+            if (fill) fill.style.width = percentage + '%';
+            if (text) text.textContent = percentage + '% Complete (' + completed + '/' + totalModules + ' modules)';
         }
         
         function updateNavButtons() {
-            const buttons = document.querySelectorAll('.nav-btn');
+            const buttons = document.querySelectorAll('.module-nav .nav-btn');
+            const moduleIds = ['welcome', 'module1', 'module2', 'module3', 'module4', 'module5', 'assessment'];
+            
             buttons.forEach((btn, index) => {
                 btn.classList.remove('active', 'completed');
+                const moduleId = moduleIds[index];
                 
-                if (index === 0) return; // Skip Home button
-                
-                const moduleNum = index;
-                if (moduleNum === currentModule) {
+                if (moduleId === currentModule) {
                     btn.classList.add('active');
-                } else if (completedModules.has(moduleNum)) {
+                } else if (completedModules.has(moduleId)) {
                     btn.classList.add('completed');
                 }
             });
         }
         
-        function showCertificate() {
-            const welcomeScreen = document.getElementById('welcome-screen');
-            welcomeScreen.innerHTML = `
+        function checkAnswer(element, isCorrect) {
+            const questionBox = element.closest('.question-box');
+            const options = questionBox.querySelectorAll('.answer-option');
+            const explanation = questionBox.querySelector('.explanation');
+            
+            // If already answered, don't do anything
+            if (element.classList.contains('correct') || element.classList.contains('incorrect')) return;
+            
+            // Mark selected answer
+            if (isCorrect) {
+                element.classList.add('correct');
+                if (currentModule === 'assessment') quizScore++;
+            } else {
+                element.classList.add('incorrect');
+                // Find and highlight correct answer
+                options.forEach(opt => {
+                    if (opt.getAttribute('onclick').includes('true')) {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+            
+            // Disable further clicks on this question
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
+            
+            // Show explanation if it exists
+            if (explanation) {
+                explanation.classList.add('show');
+            }
+        }
+
+        function calculateResult() {
+            const percentage = Math.round((quizScore / totalQuizQuestions) * 100);
+            const contentArea = document.querySelector('.content-area');
+            
+            let resultHTML = `
+                <div class="module-content active">
+                    <h2>Assessment Results</h2>
+                    <div class="highlight-box" style="text-align: center;">
+                        <div style="font-size: 48px; margin: 20px 0;">${percentage}%</div>
+                        <p>Score: ${quizScore} out of ${totalQuizQuestions} correct</p>
+                    </div>
+            `;
+            
+            if (percentage >= 80) {
+                resultHTML += `
+                    <div class="success-box">
+                        <h3>🎉 Congratulations! You Passed!</h3>
+                        <p>You have demonstrated a comprehensive understanding of the SkinApp training requirements.</p>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="start-btn" onclick="showCertificate(${percentage})">View Certificate</button>
+                    </div>
+                `;
+            } else {
+                resultHTML += `
+                    <div class="warning-box">
+                        <h3>Review Recommended</h3>
+                        <p>You need at least 80% to pass. Please review the modules and try the assessment again.</p>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="start-btn" onclick="location.reload()">Restart Course</button>
+                    </div>
+                `;
+            }
+            
+            resultHTML += `</div>`;
+            contentArea.innerHTML = resultHTML;
+            window.scrollTo(0, 0);
+        }
+        
+        function showCertificate(score) {
+            const contentArea = document.querySelector('.content-area');
+            contentArea.innerHTML = `
                 <div class="certificate">
-                    <h2>🎉 Congratulations!</h2>
-                    <p>You have successfully completed the SkinApp Training Course.</p>
-                    <p>You are now authorized to collect clinical images for the WHO SkinNTD AI project.</p>
+                    <h2>CERTIFICATE OF COMPLETION</h2>
+                    <p>This certifies that you have successfully completed the</p>
+                    <h3>SkinApp Training Course</h3>
+                    <p>WHO SkinNTD AI Image Collection Initiative</p>
                     
                     <div class="certificate-code">
-                        CERTIFICATE CODE: SKIN-${generateCode()}
+                        CODE: SKIN-${generateCode()}
                     </div>
                     
-                    <p>Please save this code. You will need it to access the image collection system.</p>
-                    <p><strong>Completion Date:</strong> ${new Date().toLocaleDateString()}</p>
+                    <p><strong>Score:</strong> ${score}%</p>
+                    <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+                        Authorized for clinical image collection
+                    </p>
                 </div>
                 
-                <button class="start-btn" onclick="location.reload()" style="margin-top: 20px;">
-                    Restart Course
-                </button>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="start-btn" onclick="window.print()" style="margin: 10px;">Print Certificate</button>
+                    <button class="start-btn" onclick="location.reload()" style="margin: 10px;">Home</button>
+                </div>
             `;
+            window.scrollTo(0, 0);
         }
         
         function generateCode() {
@@ -472,7 +1290,7 @@
         }
         
         // Initialize
-        showWelcome();
+        updateNavButtons();
     </script>
 </body>
 </html>
