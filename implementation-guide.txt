@@ -43,7 +43,7 @@ Module 5: Safeguarding Principles
 - Format: Course Presentation with scenario examples
 
 Final Assessment
-- 10 comprehensive questions
+- 20 comprehensive questions
 - Covers all 5 modules
 - 80% pass rate required
 - Multiple question types (MCQ, True/False)
@@ -118,7 +118,7 @@ CONTENT SPECIFIC NOTES
 
 ASSESSMENT DETAILS
 -----------------
-Pass Rate: 80% (8 out of 10 questions correct)
+Pass Rate: 80% (16 out of 20 questions correct)
 Retakes: Unlimited
 Question Types: Multiple choice, True/False
 Coverage: All 5 modules

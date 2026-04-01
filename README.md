@@ -16,7 +16,7 @@ This is a **complete interactive training course** for medical staff participati
 **Total Duration:** 45-60 minutes  
 **Format:** Interactive H5P modules (can run locally)  
 **Target Audience:** Medical staff, clinicians, healthcare workers  
-**Pass Rate:** 80% required for certification
+**Pass Rate:** 80% (16/20) required for certification
 
 ---
 
@@ -42,7 +42,7 @@ This is a **complete interactive training course** for medical staff participati
 | `module3-consent-branching.h5p.json` | Informed Consent | Branching Scenario |
 | `module4-privacy.h5p.json` | Anonymization | Course Presentation |
 | `module5-safeguarding.h5p.json` | Safeguarding | Course Presentation |
-| `final-assessment.h5p.json` | Final Assessment | Question Set |
+| `final-assessment.h5p.json` | Final Assessment | Question Set | (20 questions) |
 
 ### Content Directory (`/content/`)
 
@@ -178,7 +178,7 @@ Upon completing this course, you will be able to:
 
 ### Requirements:
 - Complete all 5 modules
-- Pass final assessment (80%)
+- Pass final assessment (80%, 16/20)
 - Certificate code generated: `SKIN-XXXXXXXX`
 
 ### Certificate Includes:
@@ -452,7 +452,7 @@ All content reviewed for:
 1. Open `Training course/index.html`
 2. Click "Start Course"
 3. Complete all 5 modules
-4. Pass assessment (80%)
+4. Pass assessment (80%, 16/20)
 5. Get certificate code
 6. Start collecting images!
 

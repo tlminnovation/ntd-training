@@ -3,225 +3,219 @@
   "jsonContent": {
     "title": "SkinApp Training Final Assessment",
     "description": "Complete assessment covering all 5 modules",
-    "text": "<p><strong>Final Assessment</strong></p><p>You will now complete a comprehensive assessment covering all modules:</p><ul><li>Module 1: Project Overview</li><li>Module 2: Clinical Photography</li><li>Module 3: Informed Consent</li><li>Module 4: Privacy & Anonymization</li><li>Module 5: Safeguarding</li></ul><p>You need to achieve 80% to pass. You can retake this assessment if needed.</p>",
+    "text": "<p><strong>Final Assessment</strong></p><p>You will now complete a comprehensive assessment covering all modules:</p><ul><li>Module 1: Project Overview</li><li>Module 2: Clinical Photography</li><li>Module 3: Informed Consent</li><li>Module 4: Privacy & Anonymization</li><li>Module 5: Safeguarding</li></ul><p>You need to achieve 80% (16/20) to pass. You can retake this assessment if needed.</p>",
     "questions": [
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "What is the PRIMARY goal of the WHO SkinNTD AI Image Collection Initiative?",
+          "question": "What is the primary target number for expert-verified leprosy images in this phase?",
           "answers": [
-            {
-              "text": "To train AI systems for improved leprosy and skin NTD diagnosis",
-              "correct": true,
-              "tip": "Correct! The initiative aims to build AI diagnostic tools to help healthcare workers in resource-limited settings."
-            },
-            {
-              "text": "To replace dermatologists with AI technology",
-              "correct": false,
-              "tip": "Incorrect. The AI is designed to support, not replace, healthcare professionals."
-            },
-            {
-              "text": "To create a commercial database of skin images",
-              "correct": false,
-              "tip": "Incorrect. This is a non-commercial public health initiative."
-            },
-            {
-              "text": "To develop new medications for leprosy",
-              "correct": false,
-              "tip": "Incorrect. The focus is on diagnostic support, not drug development."
-            }
+            { "text": "1,000", "correct": false },
+            { "text": "1,200", "correct": true },
+            { "text": "10,000", "correct": false }
           ]
         }
       },
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "Which metadata field is used to document skin tone for AI diversity purposes?",
+          "question": "If the AI gives a 95% confidence score, what is its primary role?",
           "answers": [
-            {
-              "text": "Clinical Form (Ridley-Jopling Classification)",
-              "correct": false,
-              "tip": "Incorrect. This classifies the type and severity of leprosy."
-            },
-            {
-              "text": "Phototype (Fitzpatrick Scale)",
-              "correct": true,
-              "tip": "Correct! The Fitzpatrick Scale (I-VI) documents skin tone to ensure AI works across diverse populations."
-            },
-            {
-              "text": "Operational Classification",
-              "correct": false,
-              "tip": "Incorrect. This categorizes paucibacillary vs multibacillary for treatment."
-            },
-            {
-              "text": "Reaction Status",
-              "correct": false,
-              "tip": "Incorrect. This documents whether the patient has leprosy reactions."
-            }
+            { "text": "Definitive diagnosis", "correct": false },
+            { "text": "Triage support for health workers", "correct": true },
+            { "text": "Replacing specialist clinical evaluation", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Why is it a project priority to recruit high-quality clinical images from diverse regions like Africa and Asia?",
+          "answers": [
+            { "text": "Because leprosy only exists in these regions", "correct": false },
+            { "text": "To ensure the AI algorithm is trained on a globally representative dataset, preventing diagnostic bias", "correct": true },
+            { "text": "Because smartphone cameras work better in these climates", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Why does the SkinApp AI need images of ALL clinical forms of leprosy (e.g., Indeterminate, Tuberculoid, Lepromatous)?",
+          "answers": [
+            { "text": "To ensure the AI can detect the full clinical spectrum, including early and subtle forms", "correct": true },
+            { "text": "Because research grants require a certain number of files for each category", "correct": false },
+            { "text": "To make the app more colorful for the end-user", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Which optical technique ensures correct texture capture for AI?",
+          "answers": [
+            { "text": "Using full Digital Zoom", "correct": false },
+            { "text": "Tapping the lesion to focus and moving 10-15cm back", "correct": true },
+            { "text": "Using the camera flash for extra detail", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Why should medical rulers be EXCLUDED from AI training photos?",
+          "answers": [
+            { "text": "They take up too much file space", "correct": false },
+            { "text": "The AI may learn the ruler's presence instead of the lesion", "correct": true },
+            { "text": "They violate hospital branding rules", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "At what angle should clinical images be taken relative to the skin surface?",
+          "answers": [
+            { "text": "45 degrees for better highlights", "correct": false },
+            { "text": "Perpendicular (90 degrees) to prevent perspective distortion", "correct": true },
+            { "text": "Dynamic angles to show the shape", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "What device feature MUST be disabled before photographing?",
+          "answers": [
+            { "text": "Highest resolution setting", "correct": false },
+            { "text": "Beauty Mode/Scene AI Enhancements", "correct": true },
+            { "text": "Wi-Fi", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Who is the primary contact for patient privacy queries and complaints?",
+          "answers": [
+            { "text": "WHO Central Office", "correct": false },
+            { "text": "The Partner Organization (Healthcare Institution)", "correct": true },
+            { "text": "TLM International", "correct": false }
           ]
         }
       },
       {
         "library": "H5P.TrueFalse 1.8",
         "params": {
-          "question": "A patient can withdraw consent at any time, even during photography.",
+          "question": "A patient can withdraw consent at any time, even after the photo is uploaded.",
           "correct": "true",
-          "tip": "Correct! Consent is an ongoing process, not a one-time event. Patients can withdraw at any moment."
+          "tip": "Correct! Consent is an ongoing process."
         }
       },
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "Which of the following should be removed from photos before submission?",
+          "question": "What is the best way to anonymize a lesion on a patient's mouth?",
           "answers": [
-            {
-              "text": "The clinical lesion being documented",
-              "correct": false,
-              "tip": "Incorrect. The lesion itself should be clearly visible as it's the subject of documentation."
-            },
-            {
-              "text": "Patient's hospital wristband",
-              "correct": true,
-              "tip": "Correct! Wristbands contain identifying information and must be removed or covered."
-            },
-            {
-              "text": "Clinical context surrounding the lesion",
-              "correct": false,
-              "tip": "Incorrect. Surrounding skin provides important clinical context and should remain visible."
-            },
-            {
-              "text": "A ruler placed for scale",
-              "correct": false,
-              "tip": "Incorrect. Scale indicators like rulers or coins are helpful for size reference."
-            }
+            { "text": "Take a full-face photo", "correct": false },
+            { "text": "Crop tightly or use clinical masking to cover the eyes and identifying profile", "correct": true },
+            { "text": "Anonymization isn't needed for medical skin", "correct": false }
           ]
         }
       },
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "When photographing lesions on private body areas, which is NOT required?",
+          "question": "What must be physically removed from the framing before the shutter is pressed?",
           "answers": [
-            {
-              "text": "Specific consent for that body region",
-              "correct": false,
-              "tip": "Incorrect. Explicit consent for the specific body area IS required."
-            },
-            {
-              "text": "Presence of a chaperone",
-              "correct": false,
-              "tip": "Incorrect. Offering a chaperone is recommended practice."
-            },
-            {
-              "text": "Photographing the entire body for context",
-              "correct": true,
-              "tip": "Correct! You should photograph only the necessary area. Full body photos are NOT required and should be avoided."
-            },
-            {
-              "text": "Professional draping",
-              "correct": false,
-              "tip": "Incorrect. Proper draping IS required to maintain dignity."
-            }
+            { "text": "Hospital ID wristbands and barcodes", "correct": true },
+            { "text": "Nothing, software will fix it later", "correct": false },
+            { "text": "Medical sterile gloves", "correct": false }
           ]
         }
       },
       {
         "library": "H5P.TrueFalse 1.8",
         "params": {
-          "question": "If a patient seems confused about what they're consenting to, you should proceed quickly before they change their mind.",
+          "question": "Is 'informed consent' just a signed piece of paper?",
           "correct": "false",
-          "tip": "Incorrect! Confusion is a red flag. You must ensure understanding before proceeding. When in doubt, take more time to explain."
+          "tip": "No, it is an ongoing clinical dialogue."
         }
       },
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "A patient speaks a different language and no interpreter is available. A family member offers to translate. What should you do?",
+          "question": "What is the protocol for photographing suspected lesions on genitalia?",
           "answers": [
-            {
-              "text": "Accept the family member's translation",
-              "correct": false,
-              "tip": "Incorrect. Family translation is NOT sufficient for informed consent."
-            },
-            {
-              "text": "Use simple gestures and assume consent",
-              "correct": false,
-              "tip": "Incorrect. This is inadequate for complex medical consent."
-            },
-            {
-              "text": "Wait for a professional interpreter or phone translation service",
-              "correct": true,
-              "tip": "Correct! Professional interpretation ensures accuracy and patient autonomy."
-            },
-            {
-              "text": "Proceed without consent since it's for a good cause",
-              "correct": false,
-              "tip": "Incorrect. Consent is mandatory regardless of the project's importance."
-            }
+            { "text": "Include them if consent is signed", "correct": false },
+            { "text": "Photographs of genitalia are strictly not accepted for this project", "correct": true },
+            { "text": "Must use a 4K camera for these", "correct": false }
           ]
         }
       },
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "You notice signs of possible child abuse while reviewing photos. What should you do?",
+          "question": "For lesions on the buttocks or breasts, what is required?",
           "answers": [
-            {
-              "text": "Submit the photo as evidence",
-              "correct": false,
-              "tip": "Incorrect. Do NOT submit images showing signs of abuse."
-            },
-            {
-              "text": "Ignore it and focus on the skin condition",
-              "correct": false,
-              "tip": "Incorrect. You have a duty to report suspected abuse."
-            },
-            {
-              "text": "Report to your institution's child protection protocol immediately",
-              "correct": true,
-              "tip": "Correct! Follow your institution's safeguarding protocols immediately."
-            },
-            {
-              "text": "Ask the parent about the bruises first",
-              "correct": false,
-              "tip": "Incorrect. Follow institutional protocols. Don't investigate on your own."
-            }
+            { "text": "No special treatment", "correct": false },
+            { "text": "Strategic medical draping to expose ONLY the lesion", "correct": true },
+            { "text": "Full body photography for context", "correct": false }
           ]
-        }
-      },
-      {
-        "library": "H5P.TrueFalse 1.8",
-        "params": {
-          "question": "The governance structure includes WHO, TLM International, Partner Organizations, and Clinicians, with clinicians having direct responsibility to patients.",
-          "correct": "true",
-          "tip": "Correct! You are part of Level 3-4 and have direct responsibility to ensure patient welfare."
         }
       },
       {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "Which of these is a 'red flag' indicating consent may not be voluntary?",
+          "question": "What does the ethical pillar of 'Beneficence' mean in this context?",
           "answers": [
-            {
-              "text": "Patient asks detailed questions about the project",
-              "correct": false,
-              "tip": "Incorrect. Asking questions indicates engagement and understanding."
-            },
-            {
-              "text": "Patient looks to family member before answering",
-              "correct": true,
-              "tip": "Correct! Looking to others for approval may indicate pressure or lack of autonomy."
-            },
-            {
-              "text": "Patient takes time to read the consent form",
-              "correct": false,
-              "tip": "Incorrect. Reading carefully shows responsible decision-making."
-            },
-            {
-              "text": "Patient requests clarification on data usage",
-              "correct": false,
-              "tip": "Incorrect. Questions about data show appropriate concern."
-            }
+            { "text": "Doing no harm", "correct": false },
+            { "text": "Acting in the best interest of the patient/society", "correct": true },
+            { "text": "Fair distribution of benefits", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "For a 15-year-old, besides parental consent, what additional layer is needed?",
+          "answers": [
+            { "text": "Medical witness", "correct": false },
+            { "text": "Adolescent Personal Assent", "correct": true },
+            { "text": "Ministry of Health approval", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Why do we record Age and Gender in the AI training metadata?",
+          "answers": [
+            { "text": "To contact the patient later", "correct": false },
+            { "text": "Because demographics influence skin appearance/pattern recognition", "correct": true },
+            { "text": "It's a WHO bureaucratic requirement", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "Why is 'dappled light' (patchy shadows) rejected?",
+          "answers": [
+            { "text": "It looks unprofessional", "correct": false },
+            { "text": "The AI can confuse shadows with disease pigmentation", "correct": true },
+            { "text": "It increases the image file size", "correct": false }
+          ]
+        }
+      },
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "What is the most effective way to prevent 'motion blur' in clinical images?",
+          "answers": [
+            { "text": "Brace your arms against your body or a hard surface", "correct": true },
+            { "text": "Use the highest digital zoom", "correct": false },
+            { "text": "Take the photo while the patient is moving", "correct": false }
           ]
         }
       }
@@ -237,7 +231,7 @@
       {
         "from": 80,
         "to": 100,
-        "feedback": "<p><strong>Congratulations!</strong> You have successfully completed the SkinApp Training Course. You are now prepared to:</p><ul><li>Collect high-quality clinical images</li><li>Obtain proper informed consent</li><li>Maintain patient dignity and privacy</li><li>Identify and respond to safeguarding concerns</li></ul><p>Remember: Patient welfare always comes first. When in doubt, stop and consult.</p>"
+        "feedback": "<p><strong>Congratulations!</strong> You have successfully completed the SkinApp Training Course. You are now prepared to contribute to global leprosy care technology.</p>"
       }
     ]
   }
