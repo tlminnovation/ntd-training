@@ -527,7 +527,7 @@
     // Registration data storage
     // Google Form ID for data collection
 
-    // Google Form for data collection - more reliable than Apps Script
+    // Google Form for data collection
     const GOOGLE_FORM_ID = '1FAIpQLScF5jzfxiHdz0hitEvbyBl8ykBzqv-CmxpxMeCvmkQGLj4oww';
     const FORM_ENTRIES = {
         name: '730226239',
@@ -542,7 +542,7 @@
 
     function sendToSheet(data) {
         // Build Google Form pre-filled URL
-        let formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse?usp=pp_url`;
+        let formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/viewform?usp=pp_url`;
         
         if (data.name) formUrl += `&entry.${FORM_ENTRIES.name}=${encodeURIComponent(data.name)}`;
         if (data.email) formUrl += `&entry.${FORM_ENTRIES.email}=${encodeURIComponent(data.email)}`;
@@ -553,13 +553,8 @@
         if (data.score) formUrl += `&entry.${FORM_ENTRIES.score}=${encodeURIComponent(data.score)}`;
         if (data.certificateCode) formUrl += `&entry.${FORM_ENTRIES.certificateCode}=${encodeURIComponent(data.certificateCode)}`;
         
-        // Submit form programmatically using iframe
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = formUrl;
-        document.body.appendChild(iframe);
-        
-        console.log('Form submitted:', data.event);
+        // Open form in new tab
+        window.open(formUrl, '_blank');
     }
 
     const registrationData = {
