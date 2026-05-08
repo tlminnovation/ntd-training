@@ -527,46 +527,35 @@
     // Registration data storage
     // Google Form ID for data collection
 
-    // Google Form for data collection
-    const GOOGLE_FORM_ID = '1FAIpQLScF5jzfxiHdz0hitEvbyBl8ykBzqv-CmxpxMeCvmkQGLj4oww';
-    const FORM_ENTRIES = {
-        name: '730226239',
-        email: '614874120',
-        organization: '1188329806',
-        facility: '1125225719',
-        qualifications: '416442196',
-        event: '1333469631',
-        score: '1520586948',
-        certificateCode: '1089206849'
-    };
+    // Apps Script Web App for data collection
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyiKf_CB4Wtcq3Mnfy8b1LOH3E46Cm3KVRmqnKNBUP2dZAe9aw4EzRXUX06H6UrDdPOAA/exec';
 
     function sendToSheet(data) {
-        // Build query string manually
-        let params = [];
-        if (data.name) params.push('entry.' + FORM_ENTRIES.name + '=' + encodeURIComponent(data.name));
-        if (data.email) params.push('entry.' + FORM_ENTRIES.email + '=' + encodeURIComponent(data.email));
-        if (data.organization) params.push('entry.' + FORM_ENTRIES.organization + '=' + encodeURIComponent(data.organization));
-        if (data.location) params.push('entry.' + FORM_ENTRIES.facility + '=' + encodeURIComponent(data.location));
-        if (data.qualifications) params.push('entry.' + FORM_ENTRIES.qualifications + '=' + encodeURIComponent(data.qualifications));
-        if (data.event) params.push('entry.' + FORM_ENTRIES.event + '=' + encodeURIComponent(data.event));
-        if (data.score) params.push('entry.' + FORM_ENTRIES.score + '=' + encodeURIComponent(data.score));
-        if (data.certificateCode) params.push('entry.' + FORM_ENTRIES.certificateCode + '=' + encodeURIComponent(data.certificateCode));
-        
-        const queryString = params.join('&');
-        const formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse?${queryString}`;
-        
-        // Create hidden image to trigger the request (works like tracking pixel)
-        const img = document.createElement('img');
-        img.src = formUrl;
-        img.style.display = 'none';
-        img.onload = function() { console.log('Saved:', data.event); };
-        img.onerror = function() { console.log('Saved (via img):', data.event); };
-        document.body.appendChild(img);
-        
-        // Also try fetch for Chrome browsers
-        fetch(formUrl, { method: 'GET', mode: 'no-cors' })
-        .then(() => console.log('Fetch ok:', data.event))
-        .catch(() => {});
+        // Build form-encoded data
+        const params = new URLSearchParams();
+        if (data.name) params.append('name', data.name);
+        if (data.email) params.append('email', data.email);
+        if (data.organization) params.append('organization', data.organization);
+        if (data.location) params.append('location', data.location);
+        if (data.qualifications) params.append('qualifications', data.qualifications);
+        if (data.event) params.append('event', data.event);
+        if (data.score) params.append('score', data.score);
+        if (data.certificateCode) params.append('certificateCode', data.certificateCode);
+
+        fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            body: params.toString(),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            mode: 'no-cors'
+        })
+        .then(() => {
+            console.log('Saved:', data.event);
+        })
+        .catch(err => {
+            console.error('Save error:', err);
+        });
     }
 
     const registrationData = {
