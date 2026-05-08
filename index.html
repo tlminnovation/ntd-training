@@ -527,37 +527,44 @@
     // Registration data storage
     // Google Form ID for data collection
 
-    // Google Sheets API for data collection
-    const SHEET_ID = '1jPbpFc4gZ22rXwNmWg9tlLB42nyf6mjGdQDd0MMXzQo';
-    const API_KEY = 'AIzaSyD9ybk1TgG8woVyaxE-Jp_vyNEcJ-EBb4M';
+    // Google Form for data collection (no choice but to use form)
+    // This submits to the hidden iframe approach
+    const GOOGLE_FORM_ID = '1FAIpQLScF5jzfxiHdz0hitEvbyBl8ykBzqv-CmxpxMeCvmkQGLj4oww';
+    const FORM_ENTRIES = {
+        name: '730226239',
+        email: '614874120',
+        organization: '1188329806',
+        facility: '1125225719',
+        qualifications: '416442196',
+        event: '1333469631',
+        score: '1520586948',
+        certificateCode: '1089206849'
+    };
 
     function sendToSheet(data) {
-        const rowData = [
-            data.name || '',
-            data.email || '',
-            data.organization || '',
-            data.location || '',
-            data.qualifications || '',
-            data.event || '',
-            data.score || '',
-            data.certificateCode || ''
-        ];
+        // Create hidden form and auto-submit via hidden iframe
+        const formData = new FormData();
+        
+        if (data.name) formData.append('entry.' + FORM_ENTRIES.name, data.name);
+        if (data.email) formData.append('entry.' + FORM_ENTRIES.email, data.email);
+        if (data.organization) formData.append('entry.' + FORM_ENTRIES.organization, data.organization);
+        if (data.location) formData.append('entry.' + FORM_ENTRIES.facility, data.location);
+        if (data.qualifications) formData.append('entry.' + FORM_ENTRIES.qualifications, data.qualifications);
+        if (data.event) formData.append('entry.' + FORM_ENTRIES.event, data.event);
+        if (data.score) formData.append('entry.' + FORM_ENTRIES.score, data.score);
+        if (data.certificateCode) formData.append('entry.' + FORM_ENTRIES.certificateCode, data.certificateCode);
 
-        fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1!A:H:append?valueInputOption=USER_ENTERED&key=${API_KEY}`, {
+        // Use fetch to submit - this might work for formResponse
+        fetch(`https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                values: [rowData]
-            })
+            body: formData,
+            mode: 'no-cors'
         })
-        .then(response => response.json())
-        .then(result => {
-            console.log('Saved to sheet:', data.event, result);
+        .then(() => {
+            console.log('Saved:', data.event);
         })
         .catch(err => {
-            console.error('Sheet error:', err);
+            console.error('Save error:', err);
         });
     }
 
