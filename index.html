@@ -527,40 +527,39 @@
     // Registration data storage
     // Google Form ID for data collection
 
-    // Google Apps Script Web App URL - works when hosted on https://
-    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxQFG0ENrnYn9hvr7Ya0OdvYQqfoOaw0f1IOCwPa1bm3S4-w0zhztt4EImAAiv8ni1ZrQ/exec";
+    // Google Form for data collection - more reliable than Apps Script
+    const GOOGLE_FORM_ID = '1FAIpQLScF5jzfxiHdz0hitEvbyBl8ykBzqv-CmxpxMeCvmkQGLj4oww';
+    const FORM_ENTRIES = {
+        name: '730226239',
+        email: '614874120',
+        organization: '1188329806',
+        facility: '1125225719',
+        qualifications: '416442196',
+        event: '1333469631',
+        score: '1520586948',
+        certificateCode: '1089206849'
+    };
 
     function sendToSheet(data) {
-        // Use form submission with redirect - avoids CORS issues
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = WEBHOOK_URL;
-        form.target = 'hiddenFrame'; // Submit in hidden iframe
+        // Build Google Form pre-filled URL
+        let formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse?usp=pp_url`;
         
-        // Add data as hidden inputs
-        Object.keys(data).forEach(key => {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : String(data[key]);
-            form.appendChild(input);
-        });
+        if (data.name) formUrl += `&entry.${FORM_ENTRIES.name}=${encodeURIComponent(data.name)}`;
+        if (data.email) formUrl += `&entry.${FORM_ENTRIES.email}=${encodeURIComponent(data.email)}`;
+        if (data.organization) formUrl += `&entry.${FORM_ENTRIES.organization}=${encodeURIComponent(data.organization)}`;
+        if (data.location) formUrl += `&entry.${FORM_ENTRIES.facility}=${encodeURIComponent(data.location)}`;
+        if (data.qualifications) formUrl += `&entry.${FORM_ENTRIES.qualifications}=${encodeURIComponent(data.qualifications)}`;
+        if (data.event) formUrl += `&entry.${FORM_ENTRIES.event}=${encodeURIComponent(data.event)}`;
+        if (data.score) formUrl += `&entry.${FORM_ENTRIES.score}=${encodeURIComponent(data.score)}`;
+        if (data.certificateCode) formUrl += `&entry.${FORM_ENTRIES.certificateCode}=${encodeURIComponent(data.certificateCode)}`;
         
-        document.body.appendChild(form);
+        // Submit form programmatically using iframe
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = formUrl;
+        document.body.appendChild(iframe);
         
-        // Create hidden iframe for form submission
-        let iframe = document.getElementById('hiddenFrame');
-        if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.id = 'hiddenFrame';
-            iframe.name = 'hiddenFrame';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-        }
-        
-        form.submit();
-        
-        console.log('Data sent via form:', data);
+        console.log('Form submitted:', data.event);
     }
 
     const registrationData = {
