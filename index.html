@@ -531,17 +531,36 @@
     const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzYR4xjdAH6U60s7uNFIYSYsfqOqGX3torHsmA9VPkr5A8EtDRWhOfcGGQFmxzl8MdPBg/exec";
 
     function sendToSheet(data) {
-        fetch(WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        }).then(response => response.json())
-        .then(result => {
-            console.log('Data sent successfully:', result);
-        })
-        .catch(err => {
-            console.error('Error sending data:', err);
+        // Use form submission with redirect - avoids CORS issues
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = WEBHOOK_URL;
+        form.target = 'hiddenFrame'; // Submit in hidden iframe
+        
+        // Add data as hidden inputs
+        Object.keys(data).forEach(key => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = typeof data[key] === 'object' ? JSON.stringify(data[key]) : String(data[key]);
+            form.appendChild(input);
         });
+        
+        document.body.appendChild(form);
+        
+        // Create hidden iframe for form submission
+        let iframe = document.getElementById('hiddenFrame');
+        if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.id = 'hiddenFrame';
+            iframe.name = 'hiddenFrame';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+        }
+        
+        form.submit();
+        
+        console.log('Data sent via form:', data);
     }
 
     const registrationData = {
