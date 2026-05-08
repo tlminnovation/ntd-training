@@ -527,8 +527,7 @@
     // Registration data storage
     // Google Form ID for data collection
 
-    // Google Form for data collection (no choice but to use form)
-    // This submits to the hidden iframe approach
+    // Google Form for data collection
     const GOOGLE_FORM_ID = '1FAIpQLScF5jzfxiHdz0hitEvbyBl8ykBzqv-CmxpxMeCvmkQGLj4oww';
     const FORM_ENTRIES = {
         name: '730226239',
@@ -542,30 +541,32 @@
     };
 
     function sendToSheet(data) {
-        // Create hidden form and auto-submit via hidden iframe
-        const formData = new FormData();
+        // Build query string manually
+        let params = [];
+        if (data.name) params.push('entry.' + FORM_ENTRIES.name + '=' + encodeURIComponent(data.name));
+        if (data.email) params.push('entry.' + FORM_ENTRIES.email + '=' + encodeURIComponent(data.email));
+        if (data.organization) params.push('entry.' + FORM_ENTRIES.organization + '=' + encodeURIComponent(data.organization));
+        if (data.location) params.push('entry.' + FORM_ENTRIES.facility + '=' + encodeURIComponent(data.location));
+        if (data.qualifications) params.push('entry.' + FORM_ENTRIES.qualifications + '=' + encodeURIComponent(data.qualifications));
+        if (data.event) params.push('entry.' + FORM_ENTRIES.event + '=' + encodeURIComponent(data.event));
+        if (data.score) params.push('entry.' + FORM_ENTRIES.score + '=' + encodeURIComponent(data.score));
+        if (data.certificateCode) params.push('entry.' + FORM_ENTRIES.certificateCode + '=' + encodeURIComponent(data.certificateCode));
         
-        if (data.name) formData.append('entry.' + FORM_ENTRIES.name, data.name);
-        if (data.email) formData.append('entry.' + FORM_ENTRIES.email, data.email);
-        if (data.organization) formData.append('entry.' + FORM_ENTRIES.organization, data.organization);
-        if (data.location) formData.append('entry.' + FORM_ENTRIES.facility, data.location);
-        if (data.qualifications) formData.append('entry.' + FORM_ENTRIES.qualifications, data.qualifications);
-        if (data.event) formData.append('entry.' + FORM_ENTRIES.event, data.event);
-        if (data.score) formData.append('entry.' + FORM_ENTRIES.score, data.score);
-        if (data.certificateCode) formData.append('entry.' + FORM_ENTRIES.certificateCode, data.certificateCode);
-
-        // Use fetch to submit - this might work for formResponse
-        fetch(`https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`, {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors'
-        })
-        .then(() => {
-            console.log('Saved:', data.event);
-        })
-        .catch(err => {
-            console.error('Save error:', err);
-        });
+        const queryString = params.join('&');
+        const formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse?${queryString}`;
+        
+        // Create hidden image to trigger the request (works like tracking pixel)
+        const img = document.createElement('img');
+        img.src = formUrl;
+        img.style.display = 'none';
+        img.onload = function() { console.log('Saved:', data.event); };
+        img.onerror = function() { console.log('Saved (via img):', data.event); };
+        document.body.appendChild(img);
+        
+        // Also try fetch for Chrome browsers
+        fetch(formUrl, { method: 'GET', mode: 'no-cors' })
+        .then(() => console.log('Fetch ok:', data.event))
+        .catch(() => {});
     }
 
     const registrationData = {
