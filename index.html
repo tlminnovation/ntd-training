@@ -507,6 +507,12 @@
         <button class="btn btn-primary" id="submit-assessment" onclick="submitAssessment()">Submit All Answers</button>
         <button class="btn btn-primary" id="retry-assessment" onclick="retryAssessment()" style="display:none; background:var(--warning); margin-left:1rem;">Retry Assessment</button>
         <div id="assessment-feedback" style="margin-top:2rem; font-weight:bold;"></div>
+        <div id="completion-message" style="display:none; margin-top:2rem; padding:2rem; background:#f0fdf4; border:2px solid var(--success); border-radius:12px; text-align:center;">
+            <h3 style="color:var(--success); margin-bottom:1rem;">Thank You for Completing the Training!</h3>
+            <p style="font-size:1.1rem; margin-bottom:1rem;">You will be contacted by <strong>TLM-IO</strong> with access to the KoBoToolbox form and further instructions.</p>
+            <p style="margin-bottom:1.5rem;">Please keep your verification code for your records.</p>
+            <button class="btn btn-primary" onclick="window.close();">Close Window</button>
+        </div>
     </div>
 
     <!-- CERTIFICATION -->
@@ -807,6 +813,7 @@
 feedback.innerHTML = `<span style="color:var(--success); font-size:1.2rem;">Clinical Clearance Granted: ${perc}% Score.</span>`;
             document.getElementById('submit-assessment').style.display = 'none';
             document.getElementById('retry-assessment').style.display = 'none';
+            document.getElementById('completion-message').style.display = 'block';
             generateCert();
             
             // Send pass data to Google Sheet
