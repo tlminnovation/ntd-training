@@ -814,7 +814,11 @@
 feedback.innerHTML = `<span style="color:var(--success); font-size:1.2rem;">Clinical Clearance Granted: ${perc}% Score.</span>`;
             document.getElementById('submit-assessment').style.display = 'none';
             document.getElementById('retry-assessment').style.display = 'none';
-            document.getElementById('completion-message').style.display = 'block';
+            
+            // Navigate to certificate (this shows module-7)
+            unlockStep(7);
+            
+            // Now generate certificate (cert-code element is visible)
             generateCert();
             
             // Send pass data to Google Sheet
@@ -829,8 +833,6 @@ feedback.innerHTML = `<span style="color:var(--success); font-size:1.2rem;">Clin
                 score: perc,
                 certificateCode: certCode
             });
-            
-            unlockStep(7);
         } else {
             // Don't show which answers were right/wrong - just show retry button
             feedback.innerHTML = `<span style="color:var(--danger); font-size:1.2rem;">Clearance Denied: ${perc}% Score (80% required). Please review the training modules and try again.</span>`;
