@@ -176,6 +176,17 @@
                 <input type="text" id="reg-qualifications" required style="width:100%; padding:0.75rem; border:2px solid #e2e8f0; border-radius:8px; font-size:1rem;" placeholder="e.g., MD, Clinical Officer, Nurse">
             </div>
             
+            <div style="margin-bottom:1.5rem;">
+                <label style="display:block; font-weight:600; margin-bottom:0.5rem;">KoBoToolbox Username *</label>
+                <input type="text" id="reg-kobo" required style="width:100%; padding:0.75rem; border:2px solid #e2e8f0; border-radius:8px; font-size:1rem;" placeholder="Your KoBoToolbox username">
+                <p style="font-size:0.85rem; color:var(--danger); margin-top:0.5rem;">
+                    <strong>Required:</strong> Your KoBoToolbox username is needed so that TLM-IO can share the data collection form with you after successful completion of this training.
+                </p>
+                <p style="font-size:0.85rem; color:var(--secondary); margin-top:0.25rem;">
+                    Not registered? <a href="https://kf.kobotoolbox.org/accounts/signup/" target="_blank">Create a KoBoToolbox account here</a> and return with your username.
+                </p>
+            </div>
+            
             <p id="reg-error" style="color:var(--danger); display:none; margin-bottom:1rem;"></p>
             
             <div style="margin-top:2rem;">
@@ -555,6 +566,7 @@
         if (data.organization) params.append('organization', data.organization);
         if (data.location) params.append('location', data.location);
         if (data.qualifications) params.append('qualifications', data.qualifications);
+        if (data.koboUsername) params.append('koboUsername', data.koboUsername);
         if (data.event) params.append('event', data.event);
         if (data.score) params.append('score', data.score);
         if (data.certificateCode) params.append('certificateCode', data.certificateCode);
@@ -580,7 +592,8 @@
         email: '',
         organization: '',
         location: '',
-        qualifications: ''
+        qualifications: '',
+        koboUsername: ''
     };
 
     const trainingState = {
@@ -632,13 +645,14 @@
         registrationData.organization = document.getElementById('reg-org').value.trim();
         registrationData.location = document.getElementById('reg-location').value.trim();
         registrationData.qualifications = document.getElementById('reg-qualifications').value.trim();
+        registrationData.koboUsername = document.getElementById('reg-kobo').value.trim();
         
         // Clear previous error
         const errorEl = document.getElementById('reg-error');
         errorEl.style.display = 'none';
         
         // Validate - check empty fields
-        if (!registrationData.name || !registrationData.email || !registrationData.organization || !registrationData.location || !registrationData.qualifications) {
+        if (!registrationData.name || !registrationData.email || !registrationData.organization || !registrationData.location || !registrationData.qualifications || !registrationData.koboUsername) {
             errorEl.innerText = 'Please complete all registration fields.';
             errorEl.style.display = 'block';
             return;
@@ -662,6 +676,7 @@
             organization: registrationData.organization,
             location: registrationData.location,
             qualifications: registrationData.qualifications,
+            koboUsername: registrationData.koboUsername,
             event: 'registration_completed'
         });
         
@@ -825,25 +840,13 @@ feedback.innerHTML = `<span style="color:var(--success); font-size:1.2rem;">Clin
             document.getElementById('submit-assessment').style.display = 'none';
             document.getElementById('retry-assessment').style.display = 'none';
             
-            // Generate certificate code
-            const code = "SKIN-" + Math.random().toString(36).substr(2, 9).toUpperCase();
-            
             // Show completion content inline
             document.getElementById('assessment-container').innerHTML = `
-                <div class="certificate" style="margin-top:2rem;">
-                    <h2>Specialist Certificate of Completion</h2>
-                    <p>This document verifies that the clinician has completed the SkinApp AI Data Collection Protocol.</p>
-                    <br>
-                    <p>Verification Code:</p>
-                    <div class="cert-code">${code}</div>
-                    <br><br>
-                    <button class="btn btn-primary" onclick="window.print()">Save/Print Certificate</button>
-                </div>
-                <div style="margin-top:2rem; padding:2rem; background:#f0fdf4; border:2px solid var(--success); border-radius:12px; text-align:center;">
-                    <h3 style="color:var(--success); margin-bottom:1rem;">Thank You for Completing the Training!</h3>
-                    <p style="font-size:1.1rem; margin-bottom:1rem;">You will be contacted by <strong>TLM-IO</strong> with access to the KoBoToolbox form and further instructions.</p>
-<p style="margin-bottom:1.5rem;">Please save or print this verification code — you will need it to submit images in the KoBoToolbox form.</p>
-                    <p style="color:var(--secondary); font-size:0.9rem; margin-bottom:1rem;">You may close this tab/window now.</p>
+                <div style="margin-top:2rem; padding:2.5rem; background:#f0fdf4; border:2px solid var(--success); border-radius:12px; text-align:center;">
+                    <h2 style="color:var(--success); margin-bottom:1.5rem;">Congratulations!</h2>
+                    <p style="font-size:1.1rem; margin-bottom:1rem;">Thank you for completing the SkinApp AI Data Collection Protocol training.</p>
+                    <p style="font-size:1.1rem; margin-bottom:1.5rem;"><strong>TLM-IO</strong> will share the data collection form with your <strong>KoBoToolbox account</strong> to begin submitting images.</p>
+                    <p style="color:var(--secondary); margin-bottom:1.5rem;">You may close this tab/window now.</p>
                     <button class="btn btn-primary" onclick="window.open('','_self').close();">Close Window</button>
                 </div>
             `;
@@ -855,9 +858,9 @@ feedback.innerHTML = `<span style="color:var(--success); font-size:1.2rem;">Clin
                 organization: registrationData.organization,
                 location: registrationData.location,
                 qualifications: registrationData.qualifications,
+                koboUsername: registrationData.koboUsername,
                 event: 'assessment_passed',
-                score: perc,
-                certificateCode: code
+                score: perc
             });
         } else {
             // Don't show which answers were right/wrong - just show retry button
@@ -872,6 +875,7 @@ feedback.innerHTML = `<span style="color:var(--success); font-size:1.2rem;">Clin
                 organization: registrationData.organization,
                 location: registrationData.location,
                 qualifications: registrationData.qualifications,
+                koboUsername: registrationData.koboUsername,
                 event: 'assessment_failed',
                 score: perc
             });
